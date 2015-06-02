@@ -1,0 +1,3 @@
+carto_fiche_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: CartoFicheBundle:Default:index }

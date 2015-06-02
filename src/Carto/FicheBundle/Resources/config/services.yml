@@ -1,0 +1,4 @@
+services:
+#    carto_fiche.example:
+#        class: Carto\FicheBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
