@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-    <parameter key="kernel.root_dir">C:\wamp\www\projetcarto\app</parameter>
+    <parameter key="kernel.root_dir">C:\wamp\www\projetcartoprod\projet-cartographie\app</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
     <parameter key="kernel.name">app</parameter>
-    <parameter key="kernel.cache_dir">C:\wamp\www\projetcarto\app\cache\dev</parameter>
-    <parameter key="kernel.logs_dir">C:\wamp\www\projetcarto\app\logs</parameter>
+    <parameter key="kernel.cache_dir">C:\wamp\www\projetcartoprod\projet-cartographie\app\cache\dev</parameter>
+    <parameter key="kernel.logs_dir">C:\wamp\www\projetcartoprod\projet-cartographie\app\logs</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</parameter>
@@ -17,6 +17,8 @@
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
+      <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
+      <parameter key="CartoUserBundle">Carto\UserBundle\CartoUserBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -102,7 +104,7 @@
     <parameter key="session.storage.options" type="collection">
       <parameter key="gc_probability">1</parameter>
     </parameter>
-    <parameter key="session.save_path">C:\wamp\www\projetcarto\app\cache\dev/sessions</parameter>
+    <parameter key="session.save_path">C:\wamp\www\projetcartoprod\projet-cartographie\app\cache\dev/sessions</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="security.secure_random.class">Symfony\Component\Security\Core\Util\SecureRandom</parameter>
     <parameter key="form.resolved_type_factory.class">Symfony\Component\Form\ResolvedFormTypeFactory</parameter>
@@ -158,7 +160,7 @@
     <parameter key="data_collector.form.extractor.class">Symfony\Component\Form\Extension\DataCollector\FormDataExtractor</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_master_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:C:\wamp\www\projetcarto\app\cache\dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:C:\wamp\www\projetcartoprod\projet-cartographie\app\cache\dev/profiler</parameter>
     <parameter key="profiler.storage.username"></parameter>
     <parameter key="profiler.storage.password"></parameter>
     <parameter key="profiler.storage.lifetime">86400</parameter>
@@ -182,7 +184,7 @@
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
-    <parameter key="router.resource">C:\wamp\www\projetcarto\app\cache\dev/assetic/routing.yml</parameter>
+    <parameter key="router.resource">C:\wamp\www\projetcartoprod\projet-cartographie\app\cache\dev/assetic/routing.yml</parameter>
     <parameter key="router.cache_class_prefix">appDev</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
@@ -193,7 +195,7 @@
     <parameter key="debug.stopwatch.class">Symfony\Component\Stopwatch\Stopwatch</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
     <parameter key="debug.event_dispatcher.class">Symfony\Component\HttpKernel\Debug\TraceableEventDispatcher</parameter>
-    <parameter key="debug.container.dump">C:\wamp\www\projetcarto\app\cache\dev/appDevDebugProjectContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:\wamp\www\projetcartoprod\projet-cartographie\app\cache\dev/appDevDebugProjectContainer.xml</parameter>
     <parameter key="debug.controller_resolver.class">Symfony\Component\HttpKernel\Controller\TraceableControllerResolver</parameter>
     <parameter key="security.context.class">Symfony\Component\Security\Core\SecurityContext</parameter>
     <parameter key="security.user_checker.class">Symfony\Component\Security\Core\User\UserChecker</parameter>
@@ -268,7 +270,16 @@
     <parameter key="security.authentication.session_strategy.strategy">migrate</parameter>
     <parameter key="security.access.always_authenticate_before_granting">false</parameter>
     <parameter key="security.authentication.hide_user_not_found">true</parameter>
-    <parameter key="security.role_hierarchy.roles" type="collection"/>
+    <parameter key="security.role_hierarchy.roles" type="collection">
+      <parameter key="ROLE_ADMIN" type="collection">
+        <parameter>ROLE_USER</parameter>
+      </parameter>
+      <parameter key="ROLE_SUPER_ADMIN" type="collection">
+        <parameter>ROLE_USER</parameter>
+        <parameter>ROLE_ADMIN</parameter>
+        <parameter>ROLE_ALLOWED_TO_SWITCH</parameter>
+      </parameter>
+    </parameter>
     <parameter key="twig.class">Twig_Environment</parameter>
     <parameter key="twig.loader.filesystem.class">Symfony\Bundle\TwigBundle\Loader\FilesystemLoader</parameter>
     <parameter key="twig.loader.chain.class">Twig_Loader_Chain</parameter>
@@ -374,7 +385,7 @@
     <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.timeout">30</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.source_ip">null</parameter>
-    <parameter key="swiftmailer.spool.default.memory.path">C:\wamp\www\projetcarto\app\cache\dev/swiftmailer/spool/default</parameter>
+    <parameter key="swiftmailer.spool.default.memory.path">C:\wamp\www\projetcartoprod\projet-cartographie\app\cache\dev/swiftmailer/spool/default</parameter>
     <parameter key="swiftmailer.mailer.default.spool.enabled">true</parameter>
     <parameter key="swiftmailer.mailer.default.plugin.impersonate">null</parameter>
     <parameter key="swiftmailer.mailer.default.single_address">null</parameter>
@@ -399,7 +410,7 @@
     <parameter key="assetic.worker.cache_busting.class">Assetic\Factory\Worker\CacheBustingWorker</parameter>
     <parameter key="assetic.value_supplier.class">Symfony\Bundle\AsseticBundle\DefaultValueSupplier</parameter>
     <parameter key="assetic.node.paths" type="collection"/>
-    <parameter key="assetic.cache_dir">C:\wamp\www\projetcarto\app\cache\dev/assetic</parameter>
+    <parameter key="assetic.cache_dir">C:\wamp\www\projetcartoprod\projet-cartographie\app\cache\dev/assetic</parameter>
     <parameter key="assetic.bundles" type="collection"/>
     <parameter key="assetic.twig_extension.class">Symfony\Bundle\AsseticBundle\Twig\AsseticExtension</parameter>
     <parameter key="assetic.twig_formula_loader.class">Assetic\Extension\Twig\TwigFormulaLoader</parameter>
@@ -409,8 +420,8 @@
     <parameter key="assetic.debug">true</parameter>
     <parameter key="assetic.use_controller">true</parameter>
     <parameter key="assetic.enable_profiler">false</parameter>
-    <parameter key="assetic.read_from">C:\wamp\www\projetcarto\app/../web</parameter>
-    <parameter key="assetic.write_to">C:\wamp\www\projetcarto\app/../web</parameter>
+    <parameter key="assetic.read_from">C:\wamp\www\projetcartoprod\projet-cartographie\app/../web</parameter>
+    <parameter key="assetic.write_to">C:\wamp\www\projetcartoprod\projet-cartographie\app/../web</parameter>
     <parameter key="assetic.variables" type="collection"/>
     <parameter key="assetic.java.bin">C:\ProgramData\Oracle\Java\javapath\java.EXE</parameter>
     <parameter key="assetic.node.bin">/usr/bin/node</parameter>
@@ -521,7 +532,7 @@
     <parameter key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</parameter>
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:\wamp\www\projetcarto\app\cache\dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:\wamp\www\projetcartoprod\projet-cartographie\app\cache\dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="sensio_framework_extra.view.guesser.class">Sensio\Bundle\FrameworkExtraBundle\Templating\TemplateGuesser</parameter>
     <parameter key="sensio_framework_extra.controller.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener</parameter>
@@ -533,6 +544,47 @@
     <parameter key="sensio_framework_extra.converter.doctrine.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DoctrineParamConverter</parameter>
     <parameter key="sensio_framework_extra.converter.datetime.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DateTimeParamConverter</parameter>
     <parameter key="sensio_framework_extra.view.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener</parameter>
+    <parameter key="fos_user.backend_type_orm">true</parameter>
+    <parameter key="fos_user.security.interactive_login_listener.class">FOS\UserBundle\EventListener\LastLoginListener</parameter>
+    <parameter key="fos_user.security.login_manager.class">FOS\UserBundle\Security\LoginManager</parameter>
+    <parameter key="fos_user.resetting.email.template">FOSUserBundle:Resetting:email.txt.twig</parameter>
+    <parameter key="fos_user.registration.confirmation.template">FOSUserBundle:Registration:email.txt.twig</parameter>
+    <parameter key="fos_user.storage">orm</parameter>
+    <parameter key="fos_user.firewall_name">main</parameter>
+    <parameter key="fos_user.model_manager_name">null</parameter>
+    <parameter key="fos_user.model.user.class">Carto\UserBundle\Entity\User</parameter>
+    <parameter key="fos_user.profile.form.type">fos_user_profile</parameter>
+    <parameter key="fos_user.profile.form.name">fos_user_profile_form</parameter>
+    <parameter key="fos_user.profile.form.validation_groups" type="collection">
+      <parameter>Profile</parameter>
+      <parameter>Default</parameter>
+    </parameter>
+    <parameter key="fos_user.registration.confirmation.from_email" type="collection">
+      <parameter key="webmaster@example.com">webmaster</parameter>
+    </parameter>
+    <parameter key="fos_user.registration.confirmation.enabled">false</parameter>
+    <parameter key="fos_user.registration.form.type">fos_user_registration</parameter>
+    <parameter key="fos_user.registration.form.name">fos_user_registration_form</parameter>
+    <parameter key="fos_user.registration.form.validation_groups" type="collection">
+      <parameter>Registration</parameter>
+      <parameter>Default</parameter>
+    </parameter>
+    <parameter key="fos_user.change_password.form.type">fos_user_change_password</parameter>
+    <parameter key="fos_user.change_password.form.name">fos_user_change_password_form</parameter>
+    <parameter key="fos_user.change_password.form.validation_groups" type="collection">
+      <parameter>ChangePassword</parameter>
+      <parameter>Default</parameter>
+    </parameter>
+    <parameter key="fos_user.resetting.email.from_email" type="collection">
+      <parameter key="webmaster@example.com">webmaster</parameter>
+    </parameter>
+    <parameter key="fos_user.resetting.token_ttl">86400</parameter>
+    <parameter key="fos_user.resetting.form.type">fos_user_resetting</parameter>
+    <parameter key="fos_user.resetting.form.name">fos_user_resetting_form</parameter>
+    <parameter key="fos_user.resetting.form.validation_groups" type="collection">
+      <parameter>ResetPassword</parameter>
+      <parameter>Default</parameter>
+    </parameter>
     <parameter key="web_profiler.controller.profiler.class">Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController</parameter>
     <parameter key="web_profiler.controller.router.class">Symfony\Bundle\WebProfilerBundle\Controller\RouterController</parameter>
     <parameter key="web_profiler.controller.exception.class">Symfony\Bundle\WebProfilerBundle\Controller\ExceptionController</parameter>
@@ -652,7 +704,7 @@
               <service class="Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder" public="false">
                 <argument type="service" id="kernel"/>
                 <argument type="service" id="templating.filename_parser"/>
-                <argument>C:\wamp\www\projetcarto\app/Resources</argument>
+                <argument>C:\wamp\www\projetcartoprod\projet-cartographie\app/Resources</argument>
               </service>
             </argument>
             <argument type="service" id="templating.locator"/>
@@ -693,7 +745,7 @@
     <service id="filesystem" class="Symfony\Component\Filesystem\Filesystem"/>
     <service id="file_locator" class="Symfony\Component\HttpKernel\Config\FileLocator">
       <argument type="service" id="kernel"/>
-      <argument>C:\wamp\www\projetcarto\app/Resources</argument>
+      <argument>C:\wamp\www\projetcartoprod\projet-cartographie\app/Resources</argument>
     </service>
     <service id="uri_signer" class="Symfony\Component\HttpKernel\UriSigner">
       <argument>ThisTokenIsNotSoSecretChangeIt</argument>
@@ -799,7 +851,7 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\wamp\www\projetcarto\app\cache\dev/translations</argument>
+        <argument key="cache_dir">C:\wamp\www\projetcartoprod\projet-cartographie\app\cache\dev/translations</argument>
         <argument key="debug">true</argument>
       </argument>
       <argument type="collection"/>
@@ -1013,7 +1065,7 @@
     </service>
     <service id="security.secure_random" class="Symfony\Component\Security\Core\Util\SecureRandom">
       <tag name="monolog.logger" channel="security"/>
-      <argument>C:\wamp\www\projetcarto\app\cache\dev/secure_random.seed</argument>
+      <argument>C:\wamp\www\projetcartoprod\projet-cartographie\app\cache\dev/secure_random.seed</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="ignore"/>
     </service>
     <service id="form.resolved_type_factory" class="Symfony\Component\Form\Extension\DataCollector\Proxy\ResolvedTypeFactoryDataCollectorProxy">
@@ -1059,6 +1111,11 @@
               <argument key="reset">form.type.reset</argument>
               <argument key="currency">form.type.currency</argument>
               <argument key="entity">form.type.entity</argument>
+              <argument key="fos_user_username">fos_user.username_form_type</argument>
+              <argument key="fos_user_profile">fos_user.profile.form.type</argument>
+              <argument key="fos_user_registration">fos_user.registration.form.type</argument>
+              <argument key="fos_user_change_password">fos_user.change_password.form.type</argument>
+              <argument key="fos_user_resetting">fos_user.resetting.form.type</argument>
             </argument>
             <argument type="collection">
               <argument key="form" type="collection">
@@ -1248,7 +1305,7 @@
     <service id="templating.filename_parser" class="Symfony\Bundle\FrameworkBundle\Templating\TemplateFilenameParser"/>
     <service id="templating.locator" class="Symfony\Bundle\FrameworkBundle\Templating\Loader\TemplateLocator" public="false">
       <argument type="service" id="file_locator"/>
-      <argument>C:\wamp\www\projetcarto\app\cache\dev</argument>
+      <argument>C:\wamp\www\projetcartoprod\projet-cartographie\app\cache\dev</argument>
     </service>
     <service id="templating.helper.assets" class="Symfony\Bundle\FrameworkBundle\Templating\Helper\AssetsHelper">
       <tag name="templating.helper" alias="assets"/>
@@ -1280,7 +1337,8 @@
       </call>
       <call method="addXmlMappings">
         <argument type="collection">
-          <argument>C:\wamp\www\projetcarto\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/config/validation.xml</argument>
+          <argument>C:\wamp\www\projetcartoprod\projet-cartographie\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/config/validation.xml</argument>
+          <argument>C:\wamp\www\projetcartoprod\projet-cartographie\vendor\friendsofsymfony\user-bundle\Resources\config\validation.xml</argument>
         </argument>
       </call>
       <call method="enableAnnotationMapping">
@@ -1292,7 +1350,16 @@
       <call method="addObjectInitializers">
         <argument type="collection">
           <argument type="service" id="doctrine.orm.validator_initializer"/>
+          <argument type="service">
+            <service class="FOS\UserBundle\Validator\Initializer" public="false">
+              <tag name="validator.initializer"/>
+              <argument type="service" id="fos_user.user_manager"/>
+            </service>
+          </argument>
         </argument>
+      </call>
+      <call method="addXmlMapping">
+        <argument>C:\wamp\www\projetcartoprod\projet-cartographie\vendor\friendsofsymfony\user-bundle\DependencyInjection\Compiler/../../Resources/config/storage-validation/orm.xml</argument>
       </call>
       <factory class="Symfony\Component\Validator\Validation" method="createValidatorBuilder"/>
     </service>
@@ -1313,7 +1380,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <argument type="service">
         <service class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage" public="false">
-          <argument>file:C:\wamp\www\projetcarto\app\cache\dev/profiler</argument>
+          <argument>file:C:\wamp\www\projetcartoprod\projet-cartographie\app\cache\dev/profiler</argument>
           <argument></argument>
           <argument></argument>
           <argument>86400</argument>
@@ -1671,6 +1738,22 @@
         <argument>Sensio\Bundle\FrameworkExtraBundle\EventListener\SecurityListener</argument>
       </call>
       <call method="addSubscriberService">
+        <argument>fos_user.security.interactive_login_listener</argument>
+        <argument>FOS\UserBundle\EventListener\LastLoginListener</argument>
+      </call>
+      <call method="addSubscriberService">
+        <argument>fos_user.listener.authentication</argument>
+        <argument>FOS\UserBundle\EventListener\AuthenticationListener</argument>
+      </call>
+      <call method="addSubscriberService">
+        <argument>fos_user.listener.flash</argument>
+        <argument>FOS\UserBundle\EventListener\FlashListener</argument>
+      </call>
+      <call method="addSubscriberService">
+        <argument>fos_user.listener.resetting</argument>
+        <argument>FOS\UserBundle\EventListener\ResettingListener</argument>
+      </call>
+      <call method="addSubscriberService">
         <argument>debug.dump_listener</argument>
         <argument>Symfony\Component\HttpKernel\EventListener\DumpListener</argument>
       </call>
@@ -1704,8 +1787,24 @@
     <service id="security.authentication.manager" class="Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager" public="false">
       <argument type="collection">
         <argument type="service">
+          <service class="Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider" public="false">
+            <argument type="service" id="fos_user.user_provider.username"/>
+            <argument type="service" id="security.user_checker"/>
+            <argument>main</argument>
+            <argument type="service" id="security.encoder_factory"/>
+            <argument>true</argument>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Symfony\Component\Security\Core\Authentication\Provider\RememberMeAuthenticationProvider" public="false">
+            <argument type="service" id="security.user_checker"/>
+            <argument>ThisTokenIsNotSoSecretChangeIt</argument>
+            <argument>main</argument>
+          </service>
+        </argument>
+        <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>556c1ab968f10</argument>
+            <argument>556d653c206cd</argument>
           </service>
         </argument>
       </argument>
@@ -1718,6 +1817,10 @@
       <argument>Symfony\Component\Security\Core\Authentication\Token\AnonymousToken</argument>
       <argument>Symfony\Component\Security\Core\Authentication\Token\RememberMeToken</argument>
     </service>
+    <service id="security.authentication.session_strategy" class="Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy" public="false">
+      <argument>migrate</argument>
+    </service>
+    <service id="security.user_checker" class="Symfony\Component\Security\Core\User\UserChecker" public="false"/>
     <service id="security.authentication_utils" class="Symfony\Component\Security\Http\Authentication\AuthenticationUtils">
       <argument type="service" id="request_stack"/>
     </service>
@@ -1751,7 +1854,16 @@
       <argument>true</argument>
     </service>
     <service id="security.role_hierarchy" class="Symfony\Component\Security\Core\Role\RoleHierarchy" public="false">
-      <argument type="collection"/>
+      <argument type="collection">
+        <argument key="ROLE_ADMIN" type="collection">
+          <argument>ROLE_USER</argument>
+        </argument>
+        <argument key="ROLE_SUPER_ADMIN" type="collection">
+          <argument>ROLE_USER</argument>
+          <argument>ROLE_ADMIN</argument>
+          <argument>ROLE_ALLOWED_TO_SWITCH</argument>
+        </argument>
+      </argument>
     </service>
     <service id="security.firewall" class="Symfony\Component\Security\Http\Firewall">
       <tag name="kernel.event_subscriber"/>
@@ -1761,10 +1873,14 @@
           <argument type="collection">
             <argument key="security.firewall.map.context.dev" type="service">
               <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                <argument>^/(_(profiler|wdt|error)|css|images|js)/</argument>
+                <argument>^/(_(profiler|wdt)|css|images|js)/</argument>
               </service>
             </argument>
-            <argument key="security.firewall.map.context.default">null</argument>
+            <argument key="security.firewall.map.context.main" type="service">
+              <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                <argument>^/</argument>
+              </service>
+            </argument>
           </argument>
         </service>
       </argument>
@@ -1774,6 +1890,13 @@
       <argument type="service" id="request_stack" on-invalid="null"/>
       <argument type="service" id="router" on-invalid="null"/>
       <argument type="service" id="security.token_storage" on-invalid="null"/>
+      <call method="registerListener">
+        <argument>main</argument>
+        <argument>fos_user_security_logout</argument>
+        <argument>logout</argument>
+        <argument>_csrf_token</argument>
+        <argument>null</argument>
+      </call>
     </service>
     <service id="security.validator.user_password" class="Symfony\Component\Security\Core\Validator\Constraints\UserPasswordValidator">
       <tag name="validator.constraint_validator" alias="security.validator.user_password"/>
@@ -1795,7 +1918,7 @@
       <argument type="collection"/>
       <argument>null</argument>
     </service>
-    <service id="security.firewall.map.context.default" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext">
+    <service id="security.firewall.map.context.main" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext">
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\ChannelListener" public="false">
@@ -1816,19 +1939,194 @@
           <service class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
             <argument type="service" id="security.token_storage"/>
             <argument type="collection">
-              <argument type="service">
-                <service class="Symfony\Component\Security\Core\User\InMemoryUserProvider" public="false"/>
-              </argument>
+              <argument type="service" id="fos_user.user_provider.username"/>
             </argument>
-            <argument>default</argument>
+            <argument>main</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="debug.event_dispatcher" on-invalid="null"/>
           </service>
         </argument>
         <argument type="service">
+          <service class="Symfony\Component\Security\Http\Firewall\LogoutListener" public="false">
+            <argument type="service" id="security.token_storage"/>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
+                <argument type="service" id="router" on-invalid="null"/>
+                <argument type="service" id="router" on-invalid="null"/>
+              </service>
+            </argument>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler" public="false">
+                <argument type="service">
+                  <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
+                    <argument type="service" id="router" on-invalid="null"/>
+                    <argument type="service" id="router" on-invalid="null"/>
+                  </service>
+                </argument>
+                <argument>fos_user_security_login</argument>
+              </service>
+            </argument>
+            <argument type="collection">
+              <argument key="csrf_parameter">_csrf_token</argument>
+              <argument key="intention">logout</argument>
+              <argument key="logout_path">fos_user_security_logout</argument>
+            </argument>
+            <call method="addHandler">
+              <argument type="service">
+                <service class="Symfony\Component\Security\Http\Logout\SessionLogoutHandler" public="false"/>
+              </argument>
+            </call>
+            <call method="addHandler">
+              <argument type="service">
+                <service class="Symfony\Component\Security\Http\RememberMe\TokenBasedRememberMeServices" public="false">
+                  <argument type="collection">
+                    <argument type="service" id="fos_user.user_provider.username"/>
+                  </argument>
+                  <argument>ThisTokenIsNotSoSecretChangeIt</argument>
+                  <argument>main</argument>
+                  <argument type="collection">
+                    <argument key="name">REMEMBERME</argument>
+                    <argument key="lifetime">31536000</argument>
+                    <argument key="path">/</argument>
+                    <argument key="domain">null</argument>
+                    <argument key="secure">false</argument>
+                    <argument key="httponly">true</argument>
+                    <argument key="always_remember_me">false</argument>
+                    <argument key="remember_me_parameter">_remember_me</argument>
+                  </argument>
+                  <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+                </service>
+              </argument>
+            </call>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener" public="false">
+            <tag name="security.remember_me_aware" id="main" provider="security.user.provider.concrete.main"/>
+            <argument type="service" id="security.token_storage"/>
+            <argument type="service" id="security.authentication.manager"/>
+            <argument type="service" id="security.authentication.session_strategy"/>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
+                <argument type="service" id="router" on-invalid="null"/>
+                <argument type="service" id="router" on-invalid="null"/>
+              </service>
+            </argument>
+            <argument>main</argument>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler" public="false">
+                <argument type="service">
+                  <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
+                    <argument type="service" id="router" on-invalid="null"/>
+                    <argument type="service" id="router" on-invalid="null"/>
+                  </service>
+                </argument>
+                <argument type="collection"/>
+                <call method="setOptions">
+                  <argument type="collection">
+                    <argument key="login_path">fos_user_security_login</argument>
+                    <argument key="always_use_default_target_path">false</argument>
+                    <argument key="default_target_path">/</argument>
+                    <argument key="target_path_parameter">_target_path</argument>
+                    <argument key="use_referer">false</argument>
+                  </argument>
+                </call>
+                <call method="setProviderKey">
+                  <argument>main</argument>
+                </call>
+              </service>
+            </argument>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler" public="false">
+                <argument type="service" id="http_kernel"/>
+                <argument type="service">
+                  <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
+                    <argument type="service" id="router" on-invalid="null"/>
+                    <argument type="service" id="router" on-invalid="null"/>
+                  </service>
+                </argument>
+                <argument type="collection"/>
+                <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+                <call method="setOptions">
+                  <argument type="collection">
+                    <argument key="login_path">fos_user_security_login</argument>
+                    <argument key="failure_path">null</argument>
+                    <argument key="failure_forward">false</argument>
+                    <argument key="failure_path_parameter">_failure_path</argument>
+                  </argument>
+                </call>
+              </service>
+            </argument>
+            <argument type="collection">
+              <argument key="check_path">fos_user_security_check</argument>
+              <argument key="use_forward">false</argument>
+              <argument key="require_previous_session">true</argument>
+              <argument key="username_parameter">_username</argument>
+              <argument key="password_parameter">_password</argument>
+              <argument key="csrf_parameter">_csrf_token</argument>
+              <argument key="intention">authenticate</argument>
+              <argument key="post_only">true</argument>
+            </argument>
+            <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+            <argument type="service" id="debug.event_dispatcher" on-invalid="null"/>
+            <argument>null</argument>
+            <call method="setRememberMeServices">
+              <argument type="service">
+                <service class="Symfony\Component\Security\Http\RememberMe\TokenBasedRememberMeServices" public="false">
+                  <argument type="collection">
+                    <argument type="service" id="fos_user.user_provider.username"/>
+                  </argument>
+                  <argument>ThisTokenIsNotSoSecretChangeIt</argument>
+                  <argument>main</argument>
+                  <argument type="collection">
+                    <argument key="name">REMEMBERME</argument>
+                    <argument key="lifetime">31536000</argument>
+                    <argument key="path">/</argument>
+                    <argument key="domain">null</argument>
+                    <argument key="secure">false</argument>
+                    <argument key="httponly">true</argument>
+                    <argument key="always_remember_me">false</argument>
+                    <argument key="remember_me_parameter">_remember_me</argument>
+                  </argument>
+                  <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+                </service>
+              </argument>
+            </call>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Symfony\Component\Security\Http\Firewall\RememberMeListener" public="false">
+            <argument type="service" id="security.token_storage"/>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Http\RememberMe\TokenBasedRememberMeServices" public="false">
+                <argument type="collection">
+                  <argument type="service" id="fos_user.user_provider.username"/>
+                </argument>
+                <argument>ThisTokenIsNotSoSecretChangeIt</argument>
+                <argument>main</argument>
+                <argument type="collection">
+                  <argument key="name">REMEMBERME</argument>
+                  <argument key="lifetime">31536000</argument>
+                  <argument key="path">/</argument>
+                  <argument key="domain">null</argument>
+                  <argument key="secure">false</argument>
+                  <argument key="httponly">true</argument>
+                  <argument key="always_remember_me">false</argument>
+                  <argument key="remember_me_parameter">_remember_me</argument>
+                </argument>
+                <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+              </service>
+            </argument>
+            <argument type="service" id="security.authentication.manager"/>
+            <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+            <argument type="service" id="debug.event_dispatcher" on-invalid="null"/>
+            <argument>true</argument>
+          </service>
+        </argument>
+        <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>556c1ab968f10</argument>
+            <argument>556d653c206cd</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -1855,8 +2153,20 @@
               <argument type="service" id="router" on-invalid="null"/>
             </service>
           </argument>
-          <argument>default</argument>
-          <argument>null</argument>
+          <argument>main</argument>
+          <argument type="service">
+            <service class="Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint" public="false">
+              <argument type="service" id="http_kernel"/>
+              <argument type="service">
+                <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
+                  <argument type="service" id="router" on-invalid="null"/>
+                  <argument type="service" id="router" on-invalid="null"/>
+                </service>
+              </argument>
+              <argument>fos_user_security_login</argument>
+              <argument>false</argument>
+            </service>
+          </argument>
           <argument>null</argument>
           <argument>null</argument>
           <argument type="service" id="monolog.logger.security" on-invalid="null"/>
@@ -1873,7 +2183,7 @@
           <argument>form_div_layout.html.twig</argument>
         </argument>
         <argument key="autoescape">filename</argument>
-        <argument key="cache">C:\wamp\www\projetcarto\app\cache\dev/twig</argument>
+        <argument key="cache">C:\wamp\www\projetcartoprod\projet-cartographie\app\cache\dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="paths" type="collection"/>
         <argument key="date" type="collection">
@@ -1947,7 +2257,7 @@
           <service class="Symfony\Bridge\Twig\Extension\CodeExtension" public="false">
             <tag name="twig.extension"/>
             <argument>null</argument>
-            <argument>C:\wamp\www\projetcarto\app</argument>
+            <argument>C:\wamp\www\projetcartoprod\projet-cartographie\app</argument>
             <argument>UTF-8</argument>
           </service>
         </argument>
@@ -2118,7 +2428,7 @@
       <argument>twig.controller.exception:showAction</argument>
     </service>
     <service id="monolog.handler.main" class="Monolog\Handler\StreamHandler">
-      <argument>C:\wamp\www\projetcarto\app\logs/dev.log</argument>
+      <argument>C:\wamp\www\projetcartoprod\projet-cartographie\app\logs/dev.log</argument>
       <argument>100</argument>
       <argument>true</argument>
       <argument>null</argument>
@@ -2180,7 +2490,7 @@
             </argument>
             <argument type="service">
               <service class="Assetic\Cache\ConfigCache" public="false">
-                <argument>C:\wamp\www\projetcarto\app\cache\dev/assetic/config</argument>
+                <argument>C:\wamp\www\projetcartoprod\projet-cartographie\app\cache\dev/assetic/config</argument>
               </service>
             </argument>
             <argument>true</argument>
@@ -2194,7 +2504,7 @@
             <tag name="assetic.formula_resource" loader="twig"/>
             <argument type="service" id="templating.loader"/>
             <argument></argument>
-            <argument>C:\wamp\www\projetcarto\app/Resources/views</argument>
+            <argument>C:\wamp\www\projetcartoprod\projet-cartographie\app/Resources/views</argument>
             <argument>/\.[^.]+\.twig$/</argument>
           </service>
         </argument>
@@ -2209,7 +2519,7 @@
           <factory service="service_container" method="getParameterBag"/>
         </service>
       </argument>
-      <argument>C:\wamp\www\projetcarto\app/../web</argument>
+      <argument>C:\wamp\www\projetcartoprod\projet-cartographie\app/../web</argument>
       <argument>true</argument>
       <call method="addWorker">
         <argument type="service">
@@ -2230,7 +2540,7 @@
       <argument type="service" id="profiler" on-invalid="null"/>
     </service>
     <service id="assetic.cache" class="Assetic\Cache\FilesystemCache" public="false">
-      <argument>C:\wamp\www\projetcarto\app\cache\dev/assetic/assets</argument>
+      <argument>C:\wamp\www\projetcartoprod\projet-cartographie\app\cache\dev/assetic/assets</argument>
     </service>
     <service id="assetic.request_listener" class="Symfony\Bundle\AsseticBundle\EventListener\RequestListener">
       <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
@@ -2286,6 +2596,14 @@
       <argument type="service">
         <service class="Symfony\Bridge\Doctrine\ContainerAwareEventManager" public="false">
           <argument type="service" id="service_container"/>
+          <call method="addEventSubscriber">
+            <argument type="service">
+              <service class="FOS\UserBundle\Doctrine\Orm\UserListener" public="false">
+                <tag name="doctrine.event_subscriber"/>
+                <argument type="service" id="service_container"/>
+              </service>
+            </argument>
+          </call>
         </service>
       </argument>
       <argument type="collection"/>
@@ -2309,17 +2627,17 @@
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_metadata_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
-        <argument>sf2orm_default_f56706a8616ec995b6c46560c699eeeed82f8601bb472bfb817c67f2e709daab</argument>
+        <argument>sf2orm_default_462949678f5ce0cfc11fe91f57c525042dbace5d6067dda1df572da511c84bd9</argument>
       </call>
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_result_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
-        <argument>sf2orm_default_f56706a8616ec995b6c46560c699eeeed82f8601bb472bfb817c67f2e709daab</argument>
+        <argument>sf2orm_default_462949678f5ce0cfc11fe91f57c525042dbace5d6067dda1df572da511c84bd9</argument>
       </call>
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_query_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
-        <argument>sf2orm_default_f56706a8616ec995b6c46560c699eeeed82f8601bb472bfb817c67f2e709daab</argument>
+        <argument>sf2orm_default_462949678f5ce0cfc11fe91f57c525042dbace5d6067dda1df572da511c84bd9</argument>
       </call>
     </service>
     <service id="doctrine.orm.default_entity_listener_resolver" class="Doctrine\ORM\Mapping\DefaultEntityListenerResolver"/>
@@ -2332,7 +2650,9 @@
       <argument type="service">
         <service class="Doctrine\ORM\Configuration" public="false">
           <call method="setEntityNamespaces">
-            <argument type="collection"/>
+            <argument type="collection">
+              <argument key="CartoUserBundle">Carto\UserBundle\Entity</argument>
+            </argument>
           </call>
           <call method="setMetadataCacheImpl">
             <argument type="service" id="doctrine_cache.providers.doctrine.orm.default_metadata_cache"/>
@@ -2345,11 +2665,38 @@
           </call>
           <call method="setMetadataDriverImpl">
             <argument type="service">
-              <service class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false"/>
+              <service class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>C:\wamp\www\projetcartoprod\projet-cartographie\src\Carto\UserBundle\Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>Carto\UserBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\XmlDriver">
+                      <argument type="service">
+                        <service class="Doctrine\Common\Persistence\Mapping\Driver\SymfonyFileLocator">
+                          <argument type="collection">
+                            <argument key="C:\wamp\www\projetcartoprod\projet-cartographie\vendor\friendsofsymfony\user-bundle\Resources\config\doctrine-mapping">FOS\UserBundle\Model</argument>
+                          </argument>
+                          <argument>.orm.xml</argument>
+                        </service>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>FOS\UserBundle\Model</argument>
+                </call>
+              </service>
             </argument>
           </call>
           <call method="setProxyDir">
-            <argument>C:\wamp\www\projetcarto\app\cache\dev/doctrine/orm/Proxies</argument>
+            <argument>C:\wamp\www\projetcartoprod\projet-cartographie\app\cache\dev/doctrine/orm/Proxies</argument>
           </call>
           <call method="setProxyNamespace">
             <argument>Proxies</argument>
@@ -2429,6 +2776,97 @@
       <argument type="service" id="security.role_hierarchy" on-invalid="null"/>
       <argument type="service" id="security.token_storage" on-invalid="null"/>
       <argument type="service" id="security.authorization_checker" on-invalid="null"/>
+    </service>
+    <service id="fos_user.security.interactive_login_listener" class="FOS\UserBundle\EventListener\LastLoginListener">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service" id="fos_user.user_manager"/>
+    </service>
+    <service id="fos_user.security.login_manager" class="FOS\UserBundle\Security\LoginManager">
+      <argument type="service" id="security.token_storage"/>
+      <argument type="service" id="security.user_checker"/>
+      <argument type="service" id="security.authentication.session_strategy"/>
+      <argument type="service" id="service_container"/>
+    </service>
+    <service id="fos_user.user_provider.username" class="FOS\UserBundle\Security\UserProvider" public="false">
+      <argument type="service" id="fos_user.user_manager"/>
+    </service>
+    <service id="fos_user.util.user_manipulator" class="FOS\UserBundle\Util\UserManipulator">
+      <argument type="service" id="fos_user.user_manager"/>
+    </service>
+    <service id="fos_user.listener.authentication" class="FOS\UserBundle\EventListener\AuthenticationListener">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service" id="fos_user.security.login_manager"/>
+      <argument>main</argument>
+    </service>
+    <service id="fos_user.listener.flash" class="FOS\UserBundle\EventListener\FlashListener">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service" id="session"/>
+      <argument type="service" id="translator"/>
+    </service>
+    <service id="fos_user.username_form_type" class="FOS\UserBundle\Form\Type\UsernameFormType">
+      <tag name="form.type" alias="fos_user_username"/>
+      <argument type="service">
+        <service class="FOS\UserBundle\Form\DataTransformer\UserToUsernameTransformer" public="false">
+          <argument type="service" id="fos_user.user_manager"/>
+        </service>
+      </argument>
+    </service>
+    <service id="fos_user.profile.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
+      <argument type="service" id="form.factory"/>
+      <argument>fos_user_profile_form</argument>
+      <argument>fos_user_profile</argument>
+      <argument type="collection">
+        <argument>Profile</argument>
+        <argument>Default</argument>
+      </argument>
+    </service>
+    <service id="fos_user.profile.form.type" class="FOS\UserBundle\Form\Type\ProfileFormType">
+      <tag name="form.type" alias="fos_user_profile"/>
+      <argument>Carto\UserBundle\Entity\User</argument>
+    </service>
+    <service id="fos_user.registration.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
+      <argument type="service" id="form.factory"/>
+      <argument>fos_user_registration_form</argument>
+      <argument>fos_user_registration</argument>
+      <argument type="collection">
+        <argument>Registration</argument>
+        <argument>Default</argument>
+      </argument>
+    </service>
+    <service id="fos_user.registration.form.type" class="FOS\UserBundle\Form\Type\RegistrationFormType">
+      <tag name="form.type" alias="fos_user_registration"/>
+      <argument>Carto\UserBundle\Entity\User</argument>
+    </service>
+    <service id="fos_user.change_password.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
+      <argument type="service" id="form.factory"/>
+      <argument>fos_user_change_password_form</argument>
+      <argument>fos_user_change_password</argument>
+      <argument type="collection">
+        <argument>ChangePassword</argument>
+        <argument>Default</argument>
+      </argument>
+    </service>
+    <service id="fos_user.change_password.form.type" class="FOS\UserBundle\Form\Type\ChangePasswordFormType">
+      <tag name="form.type" alias="fos_user_change_password"/>
+      <argument>Carto\UserBundle\Entity\User</argument>
+    </service>
+    <service id="fos_user.resetting.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
+      <argument type="service" id="form.factory"/>
+      <argument>fos_user_resetting_form</argument>
+      <argument>fos_user_resetting</argument>
+      <argument type="collection">
+        <argument>ResetPassword</argument>
+        <argument>Default</argument>
+      </argument>
+    </service>
+    <service id="fos_user.resetting.form.type" class="FOS\UserBundle\Form\Type\ResettingFormType">
+      <tag name="form.type" alias="fos_user_resetting"/>
+      <argument>Carto\UserBundle\Entity\User</argument>
+    </service>
+    <service id="fos_user.listener.resetting" class="FOS\UserBundle\EventListener\ResettingListener">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service" id="router"/>
+      <argument>86400</argument>
     </service>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig"/>
@@ -2543,7 +2981,7 @@
       <argument>^/(app(_[\w]+)?\.php/)?_wdt</argument>
     </service>
     <service id="sensio_distribution.webconfigurator" class="Sensio\Bundle\DistributionBundle\Configurator\Configurator">
-      <argument>C:\wamp\www\projetcarto\app</argument>
+      <argument>C:\wamp\www\projetcartoprod\projet-cartographie\app</argument>
       <call method="addStep">
         <argument type="service">
           <service class="Sensio\Bundle\DistributionBundle\Configurator\Step\DoctrineStep" public="false">
@@ -2691,7 +3129,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.filesystem" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage">
-      <argument>C:\wamp\www\projetcarto\app\cache\dev/sessions</argument>
+      <argument>C:\wamp\www\projetcartoprod\projet-cartographie\app\cache\dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service" id="session.storage.metadata_bag"/>
     </service>
@@ -2706,9 +3144,9 @@
     <service id="router" class="Symfony\Bundle\FrameworkBundle\Routing\Router">
       <tag name="monolog.logger" channel="router"/>
       <argument type="service" id="service_container"/>
-      <argument>C:\wamp\www\projetcarto\app\cache\dev/assetic/routing.yml</argument>
+      <argument>C:\wamp\www\projetcartoprod\projet-cartographie\app\cache\dev/assetic/routing.yml</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\wamp\www\projetcarto\app\cache\dev</argument>
+        <argument key="cache_dir">C:\wamp\www\projetcartoprod\projet-cartographie\app\cache\dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
         <argument key="generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
@@ -2728,11 +3166,26 @@
       <argument type="service">
         <service class="Doctrine\Common\Annotations\AnnotationReader" public="false"/>
       </argument>
-      <argument>C:\wamp\www\projetcarto\app\cache\dev/annotations</argument>
+      <argument>C:\wamp\www\projetcartoprod\projet-cartographie\app\cache\dev/annotations</argument>
       <argument>true</argument>
     </service>
     <service id="security.encoder_factory" class="Symfony\Component\Security\Core\Encoder\EncoderFactory">
-      <argument type="collection"/>
+      <argument type="collection">
+        <argument key="Symfony\Component\Security\Core\User\User" type="collection">
+          <argument key="class">%security.encoder.plain.class%</argument>
+          <argument key="arguments" type="collection">
+            <argument>false</argument>
+          </argument>
+        </argument>
+        <argument key="Carto\UserBundle\Entity\User" type="collection">
+          <argument key="class">%security.encoder.digest.class%</argument>
+          <argument key="arguments" type="collection">
+            <argument>sha512</argument>
+            <argument>true</argument>
+            <argument>5000</argument>
+          </argument>
+        </argument>
+      </argument>
     </service>
     <service id="security.password_encoder" class="Symfony\Component\Security\Core\Encoder\UserPasswordEncoder">
       <argument type="service" id="security.encoder_factory"/>
@@ -2742,42 +3195,50 @@
       <argument type="service" id="templating.locator"/>
       <argument type="service" id="templating.name_parser"/>
       <call method="addPath">
-        <argument>C:\wamp\www\projetcarto\vendor\symfony\symfony\src\Symfony\Bundle\FrameworkBundle/Resources/views</argument>
+        <argument>C:\wamp\www\projetcartoprod\projet-cartographie\vendor\symfony\symfony\src\Symfony\Bundle\FrameworkBundle/Resources/views</argument>
         <argument>Framework</argument>
       </call>
       <call method="addPath">
-        <argument>C:\wamp\www\projetcarto\vendor\symfony\symfony\src\Symfony\Bundle\SecurityBundle/Resources/views</argument>
+        <argument>C:\wamp\www\projetcartoprod\projet-cartographie\vendor\symfony\symfony\src\Symfony\Bundle\SecurityBundle/Resources/views</argument>
         <argument>Security</argument>
       </call>
       <call method="addPath">
-        <argument>C:\wamp\www\projetcarto\vendor\symfony\symfony\src\Symfony\Bundle\TwigBundle/Resources/views</argument>
+        <argument>C:\wamp\www\projetcartoprod\projet-cartographie\vendor\symfony\symfony\src\Symfony\Bundle\TwigBundle/Resources/views</argument>
         <argument>Twig</argument>
       </call>
       <call method="addPath">
-        <argument>C:\wamp\www\projetcarto\vendor\symfony\swiftmailer-bundle/Resources/views</argument>
+        <argument>C:\wamp\www\projetcartoprod\projet-cartographie\vendor\symfony\swiftmailer-bundle/Resources/views</argument>
         <argument>Swiftmailer</argument>
       </call>
       <call method="addPath">
-        <argument>C:\wamp\www\projetcarto\vendor\doctrine\doctrine-bundle/Resources/views</argument>
+        <argument>C:\wamp\www\projetcartoprod\projet-cartographie\vendor\doctrine\doctrine-bundle/Resources/views</argument>
         <argument>Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>C:\wamp\www\projetcarto\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
+        <argument>C:\wamp\www\projetcartoprod\projet-cartographie\vendor\friendsofsymfony\user-bundle/Resources/views</argument>
+        <argument>FOSUser</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp\www\projetcartoprod\projet-cartographie\src\Carto\UserBundle/Resources/views</argument>
+        <argument>CartoUser</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp\www\projetcartoprod\projet-cartographie\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
       <call method="addPath">
-        <argument>C:\wamp\www\projetcarto\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle/Resources/views</argument>
+        <argument>C:\wamp\www\projetcartoprod\projet-cartographie\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle/Resources/views</argument>
         <argument>WebProfiler</argument>
       </call>
       <call method="addPath">
-        <argument>C:\wamp\www\projetcarto\vendor\sensio\distribution-bundle\Sensio\Bundle\DistributionBundle/Resources/views</argument>
+        <argument>C:\wamp\www\projetcartoprod\projet-cartographie\vendor\sensio\distribution-bundle\Sensio\Bundle\DistributionBundle/Resources/views</argument>
         <argument>SensioDistribution</argument>
       </call>
       <call method="addPath">
-        <argument>C:\wamp\www\projetcarto\app/Resources/views</argument>
+        <argument>C:\wamp\www\projetcartoprod\projet-cartographie\app/Resources/views</argument>
       </call>
       <call method="addPath">
-        <argument>C:\wamp\www\projetcarto\vendor\symfony\symfony\src\Symfony\Bridge\Twig/Resources/views/Form</argument>
+        <argument>C:\wamp\www\projetcartoprod\projet-cartographie\vendor\symfony\symfony\src\Symfony\Bridge\Twig/Resources/views/Form</argument>
       </call>
     </service>
     <service id="logger" class="Symfony\Bridge\Monolog\Logger">
@@ -2851,6 +3312,39 @@
         <argument>null</argument>
       </call>
     </service>
+    <service id="fos_user.mailer" class="FOS\UserBundle\Mailer\Mailer">
+      <argument type="service" id="swiftmailer.mailer.default"/>
+      <argument type="service" id="router"/>
+      <argument type="service" id="templating"/>
+      <argument type="collection">
+        <argument key="confirmation.template">FOSUserBundle:Registration:email.txt.twig</argument>
+        <argument key="resetting.template">FOSUserBundle:Resetting:email.txt.twig</argument>
+        <argument key="from_email" type="collection">
+          <argument key="confirmation" type="collection">
+            <argument key="webmaster@example.com">webmaster</argument>
+          </argument>
+          <argument key="resetting" type="collection">
+            <argument key="webmaster@example.com">webmaster</argument>
+          </argument>
+        </argument>
+      </argument>
+    </service>
+    <service id="fos_user.util.email_canonicalizer" class="FOS\UserBundle\Util\Canonicalizer"/>
+    <service id="fos_user.util.token_generator" class="FOS\UserBundle\Util\TokenGenerator">
+      <argument type="service" id="logger" on-invalid="ignore"/>
+    </service>
+    <service id="fos_user.user_manager" class="FOS\UserBundle\Doctrine\UserManager">
+      <argument type="service" id="security.encoder_factory"/>
+      <argument type="service" id="fos_user.util.email_canonicalizer"/>
+      <argument type="service" id="fos_user.util.email_canonicalizer"/>
+      <argument type="service">
+        <service class="Doctrine\ORM\EntityManager" public="false">
+          <argument>null</argument>
+          <factory service="doctrine" method="getManager"/>
+        </service>
+      </argument>
+      <argument>Carto\UserBundle\Entity\User</argument>
+    </service>
     <service id="session.storage" alias="session.storage.native"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher"/>
     <service id="swiftmailer.spool" alias="swiftmailer.mailer.default.spool"/>
@@ -2864,6 +3358,7 @@
     <service id="doctrine.orm.default_metadata_cache" alias="doctrine_cache.providers.doctrine.orm.default_metadata_cache"/>
     <service id="doctrine.orm.default_result_cache" alias="doctrine_cache.providers.doctrine.orm.default_result_cache"/>
     <service id="doctrine.orm.default_query_cache" alias="doctrine_cache.providers.doctrine.orm.default_query_cache"/>
+    <service id="fos_user.util.username_canonicalizer" alias="fos_user.util.email_canonicalizer"/>
     <service id="sensio.distribution.webconfigurator" alias="sensio_distribution.webconfigurator"/>
     <service id="console.command.sensiolabs_security_command_securitycheckercommand" alias="sensio_distribution.security_checker.command"/>
   </services>
