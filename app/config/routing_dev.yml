@@ -16,3 +16,7 @@ _errors:
 
 _main:
     resource: routing.yml
+
+carto_fiche_category:
+    resource: "@CartoFicheBundle/Resources/config/routing.yml"
+    prefix: /categorie

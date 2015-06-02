@@ -318,6 +318,56 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
         not_fos_user_change_password:
 
+        if (0 === strpos($pathinfo, '/categorie')) {
+            // carto_fiche_categorie_index
+            if (rtrim($pathinfo, '/') === '/categorie') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'carto_fiche_categorie_index');
+                }
+
+                return array (  '_controller' => 'Carto\\FicheBundle\\Controller\\CategorieController::indexAction',  '_route' => 'carto_fiche_categorie_index',);
+            }
+
+            // carto_fiche_categorie_new
+            if ($pathinfo === '/categorie/new') {
+                return array (  '_controller' => 'Carto\\FicheBundle\\Controller\\CategorieController::newAction',  '_route' => 'carto_fiche_categorie_new',);
+            }
+
+            // carto_fiche_categorie_create
+            if ($pathinfo === '/categorie/create') {
+                return array (  '_controller' => 'Carto\\FicheBundle\\Controller\\CategorieController::createAction',  '_route' => 'carto_fiche_categorie_create',);
+            }
+
+            // carto_fiche_categorie_edit
+            if (0 === strpos($pathinfo, '/categorie/edit') && preg_match('#^/categorie/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'carto_fiche_categorie_edit')), array (  '_controller' => 'Carto\\FicheBundle\\Controller\\CategorieController::editAction',));
+            }
+
+            // carto_fiche_categorie_update
+            if (0 === strpos($pathinfo, '/categorie/update') && preg_match('#^/categorie/update/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'carto_fiche_categorie_update')), array (  '_controller' => 'Carto\\FicheBundle\\Controller\\CategorieController::updateAction',));
+            }
+
+            if (0 === strpos($pathinfo, '/categorie/tag')) {
+                // carto_fiche_tag_show
+                if ($pathinfo === '/categorie/tag/show') {
+                    return array (  '_controller' => 'Carto\\FicheBundle\\Controller\\TagController::showAction',  '_route' => 'carto_fiche_tag_show',);
+                }
+
+                // carto_fiche_tag_add
+                if ($pathinfo === '/categorie/tag/add') {
+                    return array (  '_controller' => 'Carto\\FicheBundle\\Controller\\TagController::addAction',  '_route' => 'carto_fiche_tag_add',);
+                }
+
+                // carto_fiche_tag_edit
+                if (0 === strpos($pathinfo, '/categorie/tag/edit') && preg_match('#^/categorie/tag/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'carto_fiche_tag_edit')), array (  '_controller' => 'Carto\\FicheBundle\\Controller\\TagController::editAction',));
+                }
+
+            }
+
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

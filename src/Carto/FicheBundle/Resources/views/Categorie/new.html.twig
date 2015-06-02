@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    {{ form_start(form, {"action": path('carto_fiche_categorie_create')} ) }}
+    <p>{{ form_label(form.libelle) }}</p>
+    <p>{{ form_widget(form.libelle) }}</p>
+
+    {{ form_end(form) }}
+
+{% endblock %}

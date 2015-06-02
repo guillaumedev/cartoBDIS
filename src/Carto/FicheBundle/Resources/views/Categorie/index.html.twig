@@ -1,0 +1,23 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+<p>Hello World</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>{{ 'Libelle' }}</th>
+                <th>{{ 'Modifier' }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for categorie in category %}
+                <tr>
+                    <td>{{ categorie.libelle }}</td>
+                    <td class="center"><a href="{{ path('carto_fiche_categorie_edit', { 'id': categorie.id }) }}">{{ 'Modifier' }}</a></td>
+                </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
