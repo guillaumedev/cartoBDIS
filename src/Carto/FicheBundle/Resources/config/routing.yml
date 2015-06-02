@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
 carto_fiche_categorie_index:
     path:     /
     defaults:
@@ -38,8 +38,6 @@ carto_fiche_tag_edit:
     pattern: /tag/edit/{id}
     defaults:
         _controller: CartoFicheBundle:Tag:edit
-=======
 carto_fiche_homepage:
     path:     /hello
     defaults: { _controller: CartoFicheBundle:Fiche:index }
->>>>>>> Stashed changes
