@@ -127,6 +127,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // carto_fiche_homepage
+        if ($pathinfo === '/hello') {
+            return array (  '_controller' => 'Carto\\FicheBundle\\Controller\\FicheController::indexAction',  '_route' => 'carto_fiche_homepage',);
+        }
+
         // homepage
         if ($pathinfo === '/app/example') {
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
