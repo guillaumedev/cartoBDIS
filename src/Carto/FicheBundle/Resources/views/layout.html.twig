@@ -14,8 +14,8 @@
             </div>
         </div>
         <div class="head-button">
-            <a href="#" class="btn boxShadow1">Suggérer une initiative</a>
-            <a href="#" class="btn boxShadow1">Inscrivez-vous</a>
+            <a href="{{ path('carto_fiche_fiche_new') }}" class="btn boxShadow1">Suggérer une initiative</a>
+            <a href="{{ path('fos_user_security_logout') }}" class="btn boxShadow1">Se déconnecter</a>
         </div>
     </header>
 {% endblock %}
@@ -23,6 +23,6 @@
 {% block footer %}
     <footer>
         <p>© BDIS 2015 tous droits réservés</p>
-        <p><a href="#">Contacts</a> | <a href="#">Crédits</a> | <a href="#">Mentions légales</a> | <a href="#">Charte BDIS</a> | <a href="#">Site national</a></p>
+        <p><a href="#">Contacts</a> | <a href="#">Crédits</a> | <a href="#">Mentions légales</a> | <a href="{{ path('carto_fiche_dashboard_charte') }}">Charte BDIS</a> | <a href="www.la-bdis.org/">Site national</a></p>
     </footer>
 {% endblock %}

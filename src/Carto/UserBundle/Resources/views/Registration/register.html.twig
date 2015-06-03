@@ -1,0 +1,21 @@
+{% extends 'CartoUserBundle::layout.html.twig' %}
+
+
+{% block body %}
+    <form action="{{ path('fos_user_registration_register') }}" method="post" class='form-validate'>
+        <div>
+            <label>Email</label>
+            {{ form_widget(form.email) }}
+        </div>
+        <div>
+            <label>Login</label>
+            {{ form_widget(form.username) }}
+        </div>
+        <div>
+            <label>Mot de passe</label>
+            {{ form_widget(form.plainPassword) }}
+        </div>
+
+
+    </form>
+{% endblock %}

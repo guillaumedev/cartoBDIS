@@ -8,6 +8,11 @@ carto_fiche_dashboard_dashboard:
     defaults:
         _controller: CartoFicheBundle:Dashboard:dashboard
 
+carto_fiche_dashboard_charte:
+    pattern: /dashboard/charte
+    defaults:
+        _controller: CartoFicheBundle:Dashboard:charte
+
 carto_fiche_categorie_index:
     path:     /categorie/
     defaults:
@@ -49,5 +54,16 @@ carto_fiche_tag_edit:
         _controller: CartoFicheBundle:Tag:edit
 
 carto_fiche_homepage:
-    path:     /hello
-    defaults: { _controller: CartoFicheBundle:Fiche:index }
+    path: /hello
+    defaults:
+        _controller: CartoFicheBundle:Fiche:index
+
+carto_fiche_fiche_new:
+    pattern: /fiche/new
+    defaults:
+        _controller: CartoFicheBundle:Fiche:new
+
+carto_fiche_fiche_create:
+    pattern: /fiche/create
+    defaults:
+        _controller: CartoFicheBundle:Fiche:create

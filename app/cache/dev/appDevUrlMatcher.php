@@ -327,9 +327,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Carto\\FicheBundle\\Controller\\DashboardController::indexAction',  '_route' => 'carto_fiche_homepage_index',);
         }
 
-        // carto_fiche_dashboard_dashboard
-        if ($pathinfo === '/dashboard') {
-            return array (  '_controller' => 'Carto\\FicheBundle\\Controller\\DashboardController::dashboardAction',  '_route' => 'carto_fiche_dashboard_dashboard',);
+        if (0 === strpos($pathinfo, '/dashboard')) {
+            // carto_fiche_dashboard_dashboard
+            if ($pathinfo === '/dashboard') {
+                return array (  '_controller' => 'Carto\\FicheBundle\\Controller\\DashboardController::dashboardAction',  '_route' => 'carto_fiche_dashboard_dashboard',);
+            }
+
+            // carto_fiche_dashboard_charte
+            if ($pathinfo === '/dashboard/charte') {
+                return array (  '_controller' => 'Carto\\FicheBundle\\Controller\\DashboardController::charteAction',  '_route' => 'carto_fiche_dashboard_charte',);
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/categorie')) {
@@ -384,7 +392,20 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         // carto_fiche_homepage
         if ($pathinfo === '/hello') {
-            return array (  '_controller' => 'CartoFicheBundle:Fiche:index',  '_route' => 'carto_fiche_homepage',);
+            return array (  '_controller' => 'Carto\\FicheBundle\\Controller\\FicheController::indexAction',  '_route' => 'carto_fiche_homepage',);
+        }
+
+        if (0 === strpos($pathinfo, '/fiche')) {
+            // carto_fiche_fiche_new
+            if ($pathinfo === '/fiche/new') {
+                return array (  '_controller' => 'Carto\\FicheBundle\\Controller\\FicheController::newAction',  '_route' => 'carto_fiche_fiche_new',);
+            }
+
+            // carto_fiche_fiche_create
+            if ($pathinfo === '/fiche/create') {
+                return array (  '_controller' => 'Carto\\FicheBundle\\Controller\\FicheController::createAction',  '_route' => 'carto_fiche_fiche_create',);
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

@@ -1516,7 +1516,7 @@ class Fiche
     /**
      * Get evalutationPartenaire
      *
-     * @return string 
+     * @return string
      */
     public function getEvalutationPartenaire()
     {
@@ -1539,7 +1539,7 @@ class Fiche
     /**
      * Get approvisionnement
      *
-     * @return string 
+     * @return string
      */
     public function getApprovisionnement()
     {
@@ -1562,7 +1562,7 @@ class Fiche
     /**
      * Get garanties
      *
-     * @return string 
+     * @return string
      */
     public function getGaranties()
     {

@@ -47,7 +47,6 @@ class CategorieController extends Controller
     /**
      * Creates a new Meeting entity.
      *
-     * @Route("/", name="customer_create")
      * @Method("POST")
      * @Template("CartoFicheBundle:Categorie:new.html.twig")
      */

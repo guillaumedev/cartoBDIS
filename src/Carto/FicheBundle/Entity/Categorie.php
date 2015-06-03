@@ -32,7 +32,7 @@ class Categorie
      * @ORM\ManyToMany(targetEntity="Carto\FicheBundle\Entity\Fiche")
      * @ORM\JoinColumn(name="fiche_id", referencedColumnName="id")
      */
-//    protected $fiche;
+    protected $fiche;
 
 
     /**
