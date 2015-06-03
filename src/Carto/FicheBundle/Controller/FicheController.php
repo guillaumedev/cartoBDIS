@@ -12,6 +12,7 @@ class FicheController extends Controller
 
     public function indexAction()
     {
+		
         $repository = $this	
 		  ->getDoctrine()
 		  ->getManager()
@@ -24,12 +25,18 @@ class FicheController extends Controller
 			$fiche->id = $marker->getID();
 			$fiche->latitude = $marker->getLatitude();
 			$fiche->longitude = $marker->getLongitude();
-			$fiche->presentation = $marker->getPresentation();
+			//$fiche->presentation = $marker->getPresentation();
 			$fiche->nom = $marker->getNom();
-			array_push($res, $fiche);
+			$fiche->presentation = $marker->getPresentation();
+			$fiche->contacts = $marker->getContacts();
+			
+			array_push($res, ($fiche));
 		}
 		header("Content-Type: application/json; charset=utf-8");
-		$json = json_encode($res, JSON_UNESCAPED_UNICODE);
+		$json = json_encode($res);
+		//var_dump(json_decode($json,true));
+		echo $json;
+		exit();
 		return $this->render('CartoFicheBundle:Fiche:json.html.twig', array(
 			'json' => $json	));
 		  
