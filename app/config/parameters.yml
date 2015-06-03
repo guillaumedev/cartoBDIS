@@ -1,12 +1,28 @@
 # This file is auto-generated during the composer install
+# parameters:
+#     database_host: 127.0.0.1
+#     database_port: null
+#     database_name: carto
+#     database_user: root
+#     database_password: null
+#     mailer_transport: smtp
+#     mailer_host: 127.0.0.1
+#     mailer_user: null
+#     mailer_password: null
+#     secret: ThisTokenIsNotSoSecretChangeIt
+
 parameters:
-    database_host: 127.0.0.1
-    database_port: null
-    database_name: carto
-    database_user: root
-    database_password: null
+    database_driver: pdo_mysql
+    database_host: localhost
+    database_port: '3306'
+    database_name: darkeden_carto
+    database_user: darkeden_carto
+    database_password: DNR2Icartographie
     mailer_transport: smtp
     mailer_host: 127.0.0.1
     mailer_user: null
     mailer_password: null
-    secret: ThisTokenIsNotSoSecretChangeIt
+    locale: fr
+    secret: b23d5ab214080c95f832765c9675df2ca2877cd5
+
+
