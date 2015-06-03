@@ -127,11 +127,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // carto_fiche_homepage
-        if ($pathinfo === '/hello') {
-            return array (  '_controller' => 'Carto\\FicheBundle\\Controller\\FicheController::indexAction',  '_route' => 'carto_fiche_homepage',);
-        }
-
         // homepage
         if ($pathinfo === '/app/example') {
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
@@ -323,6 +318,20 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
         not_fos_user_change_password:
 
+        // carto_fiche_homepage_index
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'carto_fiche_homepage_index');
+            }
+
+            return array (  '_controller' => 'Carto\\FicheBundle\\Controller\\DashboardController::indexAction',  '_route' => 'carto_fiche_homepage_index',);
+        }
+
+        // carto_fiche_dashboard_dashboard
+        if ($pathinfo === '/dashboard') {
+            return array (  '_controller' => 'Carto\\FicheBundle\\Controller\\DashboardController::dashboardAction',  '_route' => 'carto_fiche_dashboard_dashboard',);
+        }
+
         if (0 === strpos($pathinfo, '/categorie')) {
             // carto_fiche_categorie_index
             if (rtrim($pathinfo, '/') === '/categorie') {
@@ -353,24 +362,29 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'carto_fiche_categorie_update')), array (  '_controller' => 'Carto\\FicheBundle\\Controller\\CategorieController::updateAction',));
             }
 
-            if (0 === strpos($pathinfo, '/categorie/tag')) {
-                // carto_fiche_tag_show
-                if ($pathinfo === '/categorie/tag/show') {
-                    return array (  '_controller' => 'Carto\\FicheBundle\\Controller\\TagController::showAction',  '_route' => 'carto_fiche_tag_show',);
-                }
+        }
 
-                // carto_fiche_tag_add
-                if ($pathinfo === '/categorie/tag/add') {
-                    return array (  '_controller' => 'Carto\\FicheBundle\\Controller\\TagController::addAction',  '_route' => 'carto_fiche_tag_add',);
-                }
-
-                // carto_fiche_tag_edit
-                if (0 === strpos($pathinfo, '/categorie/tag/edit') && preg_match('#^/categorie/tag/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'carto_fiche_tag_edit')), array (  '_controller' => 'Carto\\FicheBundle\\Controller\\TagController::editAction',));
-                }
-
+        if (0 === strpos($pathinfo, '/tag')) {
+            // carto_fiche_tag_show
+            if ($pathinfo === '/tag/show') {
+                return array (  '_controller' => 'Carto\\FicheBundle\\Controller\\TagController::showAction',  '_route' => 'carto_fiche_tag_show',);
             }
 
+            // carto_fiche_tag_add
+            if ($pathinfo === '/tag/add') {
+                return array (  '_controller' => 'Carto\\FicheBundle\\Controller\\TagController::addAction',  '_route' => 'carto_fiche_tag_add',);
+            }
+
+            // carto_fiche_tag_edit
+            if (0 === strpos($pathinfo, '/tag/edit') && preg_match('#^/tag/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'carto_fiche_tag_edit')), array (  '_controller' => 'Carto\\FicheBundle\\Controller\\TagController::editAction',));
+            }
+
+        }
+
+        // carto_fiche_homepage
+        if ($pathinfo === '/hello') {
+            return array (  '_controller' => 'CartoFicheBundle:Fiche:index',  '_route' => 'carto_fiche_homepage',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

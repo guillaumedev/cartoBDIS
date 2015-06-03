@@ -19,4 +19,4 @@ _main:
 
 carto_fiche_category:
     resource: "@CartoFicheBundle/Resources/config/routing.yml"
-    prefix: /categorie
+    prefix: /

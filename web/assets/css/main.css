@@ -1,0 +1,512 @@
+/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+* {
+
+    font-family: 'Titillium Web', sans-serif;
+    box-sizing:border-box;
+}
+
+.boxShadow1 {box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);}
+.boxShadow2 {box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);}
+.boxShadow3 {box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);}
+.boxShadow4 {box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);}
+.boxShadow5 {box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);}
+
+a {
+
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+body {
+
+    font-size: 11px;
+}
+
+header {
+
+    width: 100%;
+    height: auto;
+    position: fixed;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: space-between;
+    flex-direction:column;
+    z-index: 20;
+    padding: 0 1rem;
+}
+
+.title {
+
+    display: flex;
+    align-items:flex-end;
+}
+
+h1 {
+
+    margin: 0;
+    font-weight: 500;
+    font-size: 3.5rem;
+    line-height: 64px;
+}
+
+.blue {color:#2196F3;}
+.red {color:#F44336;}
+.yellow {color:#f8b333;}
+.green {color: #96bf0d;}
+
+.title h2 {
+
+    font-size: 1rem;
+    margin: 0 0 6px 0;
+    opacity: 0.5;
+    display: none;
+}
+
+.head-button {
+
+    height: 100%;
+    justify-content:space-between;
+    align-items:center;
+    flex-direction:row;
+}
+
+.head-button .btn {
+
+    height: 36px;
+    margin: 5px 0;
+    border: none;
+    padding: 0 2rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: white;
+    background-color: #2196F3;
+    line-height: 36px;
+    display: inline-block;
+}
+
+.menu-mobile {
+
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+    padding-top:15px;
+    position: absolute;
+    top: 0;
+    right: 5px;
+
+}
+
+.menu-mobile div {
+
+    width: 50%;
+    text-align: center;
+    margin: 3px 0;
+    height: 4px;
+    background-color: black;
+}
+
+/* ==========================================================================
+   aside
+   ========================================================================== */
+
+#aside {
+
+    width: 100%;
+    background-color: #f2f2f2;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    max-height: 100%;
+    padding: 160px 2rem 50px 1rem;
+    z-index: 2;
+    -webkit-transition:right 0.5s;
+    transition:right 0.5s;
+    display:flex;
+    flex-direction:column;
+}
+
+#aside.open {
+
+    right: 0;
+}
+
+#aside h2 {
+
+    font-weight: 300;
+}
+
+#aside input {
+
+    width: 100%;
+}
+
+#aside .tabs {
+
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content:space-around;
+    padding: 0;
+    margin: 0;
+}
+#aside .tabs li {
+
+    padding-bottom: 5px;
+}
+#aside .tabs li.on {
+
+    font-weight: bold;
+    border-bottom: 2px solid rgba(0,0,0,0.3);
+}
+
+#aside .tabs li img {
+
+    width: 15px;
+    height: 15px;
+    margin-top: -3px;
+    margin-right: 5px;
+}
+
+#results {
+
+    width: 100%;
+    overflow-y:scroll;
+    margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   map
+   ========================================================================== */
+
+#map-canvas {
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding-top: 105px;
+    padding-bottom: 50px;
+}
+
+#map {
+
+    width: 100%;
+    height: 100%;
+    background: url('../img/test.png') -400px -200px;
+}
+
+.bubble {
+
+    position: absolute;
+    top: 300px;
+    left: 300px;
+    width: 400px;
+    background-color: white;
+    padding:2rem;
+}
+
+.bubble .btn {
+
+    height: 36px;
+    margin: 0;
+    border: none;
+    padding: 0 2rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: white;
+    background-color: #2196F3;
+    line-height: 36px;
+
+}
+
+/* ==========================================================================
+   footer
+   ========================================================================== */
+
+footer {
+
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items:center;
+    padding: 0 0.5rem;
+    justify-content:space-between;
+    z-index: 3;
+}
+
+footer p {
+
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+footer a {
+
+    margin: 0px;
+}
+
+
+/* ==========================================================================
+   base page
+   ========================================================================== */
+
+#wrap {
+
+    padding: 64px 2rem 60px 2rem;
+    max-width: 1100px;
+    margin: 0 auto; 
+    background-color: #f2f2f2;
+
+}
+
+/* ==========================================================================
+   home page
+   ========================================================================== */
+
+.intro {
+
+    width: 100%;
+    height: 100%;
+    padding: 2em;
+    background-color: #424242;
+    position: absolute;
+}
+.back {
+
+    position: relative;
+    background: url('../img/back.jpg') center;
+    width: 100%;
+    height: 100%;
+}
+
+.intro .btn {
+
+    height: 40px;
+    margin: 0 10px;
+    border: none;
+    padding: 0.1em 2em;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: white;
+    border: 3px solid white;
+    background-color: transparent;
+    line-height: 32px;
+    display: block;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.intro .btn:hover {
+
+    background-color: rgba(255,255,255,0.2);
+} 
+
+.intro-titre {
+
+    bottom: 0;
+    font-size: 1.15em;
+    padding: 1.8em;
+    position: absolute;
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-direction:column;
+}
+
+.intro-titre span {
+
+    font-size: 8rem;
+}
+
+.intro-titre h2 {
+
+    margin-top: 0;
+    padding-left: 24px;
+    font-weight: normal;
+    opacity: 0.8;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 1000px) {
+
+    .menu-mobile {
+
+        display: none;
+
+    }
+
+    header {
+
+        flex-direction:row;
+        height: 64px;
+    }
+
+    .head-button {
+
+        display: flex;
+
+    }
+    .head-button .btn {
+
+        width: auto;
+        margin: 0 10px;
+    }
+
+    #map-canvas {
+
+        padding-right: 450px;
+        padding-top: 64px;
+    }
+
+    #aside {
+
+        width: 450px;
+        right: 0;
+        padding-top: 80px;
+    }
+
+    footer {
+
+        padding: 0 1rem;
+    }
+
+    body {
+
+        font-size: 16px;
+    }
+
+    .intro-titre {
+
+        flex-direction:row;
+    }
+
+    .intro .btn {
+
+        display: inline-block;
+    }
+
+    .title h2 {
+
+        display: inline-block;
+    }
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}

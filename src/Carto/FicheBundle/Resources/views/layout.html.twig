@@ -1,0 +1,28 @@
+{% extends '::base.html.twig' %}
+
+{% block header %}
+    <header class='boxShadow1'>
+        <div class='title'>
+            <h1>
+                <a href="{{ path('carto_fiche_dashboard_dashboard') }}">
+                    <span class="blue">b</span><span class="red">d</span><span class="yellow">i</span><span class="green">s</span></a></h1>
+            <h2>Base de donnée des initiatives économiques et solidaires</h2>
+            <div class="menu-mobile open">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="head-button">
+            <a href="#" class="btn boxShadow1">Suggérer une initiative</a>
+            <a href="#" class="btn boxShadow1">Inscrivez-vous</a>
+        </div>
+    </header>
+{% endblock %}
+
+{% block footer %}
+    <footer>
+        <p>© BDIS 2015 tous droits réservés</p>
+        <p><a href="#">Contacts</a> | <a href="#">Crédits</a> | <a href="#">Mentions légales</a> | <a href="#">Charte BDIS</a> | <a href="#">Site national</a></p>
+    </footer>
+{% endblock %}

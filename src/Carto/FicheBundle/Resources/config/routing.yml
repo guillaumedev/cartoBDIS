@@ -1,26 +1,35 @@
+carto_fiche_homepage_index:
+    pattern: /
+    defaults:
+        _controller: CartoFicheBundle:Dashboard:index
+
+carto_fiche_dashboard_dashboard:
+    pattern: /dashboard
+    defaults:
+        _controller: CartoFicheBundle:Dashboard:dashboard
 
 carto_fiche_categorie_index:
-    path:     /
+    path:     /categorie/
     defaults:
         _controller: CartoFicheBundle:Categorie:index
 
 carto_fiche_categorie_new:
-    path: /new
+    path: /categorie/new
     defaults:
         _controller: CartoFicheBundle:Categorie:new
 
 carto_fiche_categorie_create:
-    pattern: /create
+    pattern: /categorie/create
     defaults:
         _controller: CartoFicheBundle:Categorie:create
 
 carto_fiche_categorie_edit:
-    pattern: /edit/{id}
+    pattern: /categorie/edit/{id}
     defaults:
         _controller: CartoFicheBundle:Categorie:edit
 
 carto_fiche_categorie_update:
-    pattern: /update/{id}
+    pattern: /categorie/update/{id}
     defaults:
         _controller: CartoFicheBundle:Categorie:update
 
@@ -38,6 +47,7 @@ carto_fiche_tag_edit:
     pattern: /tag/edit/{id}
     defaults:
         _controller: CartoFicheBundle:Tag:edit
+
 carto_fiche_homepage:
     path:     /hello
     defaults: { _controller: CartoFicheBundle:Fiche:index }

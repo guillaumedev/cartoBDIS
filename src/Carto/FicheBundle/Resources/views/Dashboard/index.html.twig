@@ -1,0 +1,33 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="intro">
+        <div class="back">
+            <div class="intro-titre">
+                <div>
+                    <h1><span class="blue">b</span><span class="red">d</span><span class="yellow">i</span><span class="green">s</span>
+                        Basse Normandie</h1>
+                    <h2>Base de données des initiatives économiques et solidaires</h2>
+                </div>
+                <div>
+                    <a class="btn boxShadow1" href="{{ path('carto_fiche_dashboard_dashboard') }}">Accéder à la carte</a>
+                    <a href="#" class='btn boxShadow1'>Se connecter</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<script src="js/vendor/jquery-1.11.2.min.js"></script>-->
+    <!--<script src="js/main.js"></script>-->
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <!--<script>-->
+        <!--(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=-->
+                <!--function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;-->
+            <!--e=o.createElement(i);r=o.getElementsByTagName(i)[0];-->
+            <!--e.src='//www.google-analytics.com/analytics.js';-->
+            <!--r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));-->
+        <!--ga('create','UA-XXXXX-X','auto');ga('send','pageview');-->
+    <!--</script>-->
+{% endblock %}

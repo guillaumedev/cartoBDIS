@@ -1,0 +1,44 @@
+{% extends 'CartoFicheBundle::layout.html.twig' %}
+
+{% block content %}
+    <aside id="aside" class="boxShadow1 open">
+        <ul class='tabs'>
+            <li class="on"><a href="#"><img src="{{ asset('assets/img/search.svg') }}"> Rechercher</a></li>
+            <li><a href="#"><img src="{{ asset('assets/img/info.svg') }}"> Informations</a></li>
+            <li><a href="#"><img src="{{ asset('assets/img/help.svg') }}"> Aide</a></li>
+        </ul>
+        <div id="recherche">
+            <h2>Rechercher une initiative</h2>
+            <input type="text">
+            <hr>
+            <div id="results">
+                <ul>
+                    {% for categorie in category %}
+                        <li>{{ categorie.libelle }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div id="information">
+            <p>La base de données des initiatives économiques et solidaires (BDIS) est éditée par le mouvement pour l’économie solidaire.
+                Elle a pour objectifs de :
+                Construire un référentiel commun de l’économie sociale et solidaire
+                Favoriser le développement et la structuration des réseaux
+                Relier des acteurs ensemble sur des thématiques ou des projets communs
+                Etre un outil à la disposition des acteurs régionaux et nationaux de l’économie sociale et solidaire
+                Pour s’inscrire dans la BDIS, il faut au préalable approuver sa charte (ndlr lien vers la charte –bas de page).
+                Vous pouvez procéder à une inscription en ligne ou nous contacter en nous envoyant un courriel à l’adresse bdis@apeas.fr
+                Chaque initiative inscrite sur le site peut à tout moment demander à être retirée de la BDIS en envoyant un courriel à l’adresse bdis@apeas.fr.
+                Enfin, nous vous sollicitons pour nous faire des commentaires sur la BDIS en nous contactant à l’adresse électronique précédente.</p>
+        </div>
+        <div id="aide">
+            <p>Pour faire une recherche en ligne, entrez un ou plusieurs mots clés en utilisant la fonction rechercher puis validez en cliquant sur ok
+                Exemple de mots clés simples :
+                accompagnement ; agriculture ; agriculture biologique ; artisanat ; association intermédiaire ; audiovisuel ; autoproduction ; bénévolat ; biodiversité ; cantine bio ; chantier d’insertion ; circuits courts ; commerce équitable ; communication ; compostage ; conseil ; coopérative ; couveuse ; crèche ; culture ; éducation populaire ; énergie solaire ; environnement ; espaces verts ; finances solidaires ; formation ; habitat ; habitat groupé ; handicap ; IAE ; insertion ; internet ; jardins ; librairie ; logiciel libre ; micro crédit ; mobilité ; musique ; patrimoine ; recyclage ; recyclerie ; restauration ; rural ; salle de spectacle ; spectacle ; télévision participative ; TIC ; tourisme ; traiteur ; université ; Vélo ; vêtements ; voiture
+                Exemple de mots clés combinés : magasin Paris ; agriculture Var ; magasin marseille équitable
+                Pour vous inscrire en ligne, cliquez sur Inscrivez vous. Après avoir approuver la charte, saisissez les informations concernant votre structure dans les différentes rubriques. Les rubriques suivis d’un * sont obligatoires.
+                Consultez le site national de la BDIS : le site www.la-bdis.org vous informera sur le développement du projet BDIS. Il vous mettre en lien avec des projets similaires ou complémentaires au niveau national et international. Il vous permettra de réaliser des recherches plus ciblées.
+                Consultez la charte des acteurs de la BDIS : charte de la BDIS (lien vers base de page)</p>
+        </div>
+    </aside>
+{% endblock %}
