@@ -29,7 +29,9 @@ class FicheController extends Controller
 			array_push($res, $fiche);
 		}
 		header("Content-Type: application/json; charset=utf-8");
-		print_r(json_encode($res, JSON_UNESCAPED_UNICODE));
+		$json = json_encode($res, JSON_UNESCAPED_UNICODE);
+		return $this->render('CartoFicheBundle:Fiche:json.html.twig', array(
+			'json' => $json	));
 		  
     }
 }
