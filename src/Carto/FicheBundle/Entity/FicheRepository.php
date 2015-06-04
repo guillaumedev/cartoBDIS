@@ -12,4 +12,23 @@ use Doctrine\ORM\EntityRepository;
  */
 class FicheRepository extends EntityRepository
 {
+	
+	public function searchVille($ville){
+		$qb = $this->_em->createQuery('SELECT a FROM CartoFicheBundle:Fiche a WHERE a.ville LIKE :ville')
+		->setParameter('ville',"%".$ville."%");
+		return $qb->getResult();
+	}
+	
+	public function searchNom($nom){
+		$qb = $this->_em->createQuery('SELECT a FROM CartoFicheBundle:Fiche a WHERE a.nom LIKE :nom')
+		->setParameter('nom',"%".$nom."%");
+		return $qb->getResult();
+	}
+	
+	public function searchStatus($statut){
+		$qb = $this->_em->createQuery('SELECT a FROM CartoFicheBundle:Fiche a WHERE a.statut_juridique LIKE :statut')
+		->setParameter('statut',"%".$statut."%");
+		return $qb->getResult();
+	}	
+	
 }

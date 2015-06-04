@@ -31,7 +31,7 @@ class Fiche
     /**
      * @var string
      *
-     * @ORM\Column(name="sigle", type="string", length=100)
+     * @ORM\Column(name="sigle", type="string", length=50)
      */
     public $sigle;
 
@@ -52,7 +52,7 @@ class Fiche
     /**
      * @var string
      *
-     * @ORM\Column(name="ville", type="string", length=100)
+     * @ORM\Column(name="ville", type="string", length=255)
      */
     public $ville;
 
@@ -66,7 +66,7 @@ class Fiche
     /**
      * @var string
      *
-     * @ORM\Column(name="region", type="string", length=100)
+     * @ORM\Column(name="region", type="string", length=255)
      */
     public $region;
 
@@ -122,7 +122,7 @@ class Fiche
     /**
      * @var string
      *
-     * @ORM\Column(name="contacts", type="string", length=255)
+     * @ORM\Column(name="contacts", type="text")
      */
     public $contacts;
 
@@ -136,7 +136,7 @@ class Fiche
     /**
      * @var string
      *
-     * @ORM\Column(name="structure_porteuse", type="string", length=255)
+     * @ORM\Column(name="structure_porteuse", type="text")
      */
     public $structurePorteuse;
 
@@ -150,7 +150,7 @@ class Fiche
     /**
      * @var string
      *
-     * @ORM\Column(name="situation", type="string", length=100)
+     * @ORM\Column(name="situation", type="string", length=255)
      */
     public $situation;
 
@@ -160,13 +160,6 @@ class Fiche
      * @ORM\Column(name="siret", type="string", length=255)
      */
     public $siret;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="naf", type="string", length=255)
-     */
-    public $naf;
 
     /**
      * @var string
@@ -190,9 +183,9 @@ class Fiche
     public $nombreEtp;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="nombre_associes", type="integer")
+     * @ORM\Column(name="nombre_associes", type="string", length=255)
      */
     public $nombreAssocies;
 
@@ -248,13 +241,6 @@ class Fiche
     /**
      * @var string
      *
-     * @ORM\Column(name="charte", type="text")
-     */
-    public $charte;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="utilite_sociale", type="text")
      */
     public $utiliteSociale;
@@ -262,7 +248,14 @@ class Fiche
     /**
      * @var string
      *
-     * @ORM\Column(name="territoire", type="text")
+     * @ORM\Column(name="charte", type="text")
+     */
+    public $charte;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="territoire", type="string", length=255)
      */
     public $territoire;
 
@@ -292,14 +285,7 @@ class Fiche
      *
      * @ORM\Column(name="lieu_vente_produits", type="text")
      */
-    public $lieuVenteProduits;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="lieu_vente_services", type="text")
-     */
-    public $lieuVenteServices;
+    public $lieuVenteProduit;
 
     /**
      * @var string
@@ -325,16 +311,65 @@ class Fiche
     /**
      * @var string
      *
-     * @ORM\Column(name="innovations_socioeco", type="text")
+     * @ORM\Column(name="filiere_economique_1", type="text")
      */
-    public $innovationsSocioeco;
+    public $filiereEconomique1;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="roles_ess", type="text")
+     * @ORM\Column(name="sousfilieres_classiques_1", type="text")
      */
-    public $rolesEss;
+    public $sousfilieresClassiques1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sousfilieres_ess_1", type="text")
+     */
+    public $sousfilieresEss1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="filiere_economique_2", type="text")
+     */
+    public $filiereEconomique2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sousfilieres_classiques_2", type="text")
+     */
+    public $sousfilieresClassiques2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sousfilieres_ess_2", type="text")
+     */
+    public $sousfilieresEss2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="filiere_economique_3", type="text")
+     */
+    public $filiereEconomique3;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sousfilieres_classiques_3", type="text")
+     */
+    public $sousfilieresClassiques3;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sousfilieres_ess_3", type="text")
+     */
+    public $sousfilieresEss3;
 
     /**
      * @var string
@@ -344,25 +379,39 @@ class Fiche
     public $qualificatifsStructure;
 
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="instances", type="text")
+     * @ORM\Column(name="anneere_ference", type="integer")
      */
-    public $instances;
+    public $anneereFerence;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="composition_direction", type="text")
+     * @ORM\Column(name="propriete_budget", type="string", length=255)
      */
-    public $compositionDirection;
+    public $proprieteBudget;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="evalutation_partenaire", type="text")
+     * @ORM\Column(name="propriete_chiffreaffaires", type="string", length=255)
      */
-    public $evalutationPartenaire;
+    public $proprieteChiffreaffaires;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="propriete_valorisationbenevolat", type="string", length=255)
+     */
+    public $proprieteValorisationbenevolat;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prestations_precises", type="text")
+     */
+    public $prestationsPrecises;
 
     /**
      * @var string
@@ -857,29 +906,6 @@ class Fiche
     }
 
     /**
-     * Set naf
-     *
-     * @param string $naf
-     * @return Fiche
-     */
-    public function setNaf($naf)
-    {
-        $this->naf = $naf;
-    
-        return $this;
-    }
-
-    /**
-     * Get naf
-     *
-     * @return string 
-     */
-    public function getNaf()
-    {
-        return $this->naf;
-    }
-
-    /**
      * Set joursOuverture
      *
      * @param string $joursOuverture
@@ -951,7 +977,7 @@ class Fiche
     /**
      * Set nombreAssocies
      *
-     * @param integer $nombreAssocies
+     * @param string $nombreAssocies
      * @return Fiche
      */
     public function setNombreAssocies($nombreAssocies)
@@ -964,7 +990,7 @@ class Fiche
     /**
      * Get nombreAssocies
      *
-     * @return integer 
+     * @return string 
      */
     public function getNombreAssocies()
     {
@@ -1133,29 +1159,6 @@ class Fiche
     }
 
     /**
-     * Set charte
-     *
-     * @param string $charte
-     * @return Fiche
-     */
-    public function setCharte($charte)
-    {
-        $this->charte = $charte;
-    
-        return $this;
-    }
-
-    /**
-     * Get charte
-     *
-     * @return string 
-     */
-    public function getCharte()
-    {
-        return $this->charte;
-    }
-
-    /**
      * Set utiliteSociale
      *
      * @param string $utiliteSociale
@@ -1176,6 +1179,29 @@ class Fiche
     public function getUtiliteSociale()
     {
         return $this->utiliteSociale;
+    }
+
+    /**
+     * Set charte
+     *
+     * @param string $charte
+     * @return Fiche
+     */
+    public function setCharte($charte)
+    {
+        $this->charte = $charte;
+    
+        return $this;
+    }
+
+    /**
+     * Get charte
+     *
+     * @return string 
+     */
+    public function getCharte()
+    {
+        return $this->charte;
     }
 
     /**
@@ -1271,49 +1297,26 @@ class Fiche
     }
 
     /**
-     * Set lieuVenteProduits
+     * Set lieuVenteProduit
      *
-     * @param string $lieuVenteProduits
+     * @param string $lieuVenteProduit
      * @return Fiche
      */
-    public function setLieuVenteProduits($lieuVenteProduits)
+    public function setLieuVenteProduit($lieuVenteProduit)
     {
-        $this->lieuVenteProduits = $lieuVenteProduits;
+        $this->lieuVenteProduit = $lieuVenteProduit;
     
         return $this;
     }
 
     /**
-     * Get lieuVenteProduits
+     * Get lieuVenteProduit
      *
      * @return string 
      */
-    public function getLieuVenteProduits()
+    public function getLieuVenteProduit()
     {
-        return $this->lieuVenteProduits;
-    }
-
-    /**
-     * Set lieuVenteServices
-     *
-     * @param string $lieuVenteServices
-     * @return Fiche
-     */
-    public function setLieuVenteServices($lieuVenteServices)
-    {
-        $this->lieuVenteServices = $lieuVenteServices;
-    
-        return $this;
-    }
-
-    /**
-     * Get lieuVenteServices
-     *
-     * @return string 
-     */
-    public function getLieuVenteServices()
-    {
-        return $this->lieuVenteServices;
+        return $this->lieuVenteProduit;
     }
 
     /**
@@ -1386,49 +1389,210 @@ class Fiche
     }
 
     /**
-     * Set innovationsSocioeco
+     * Set filiereEconomique1
      *
-     * @param string $innovationsSocioeco
+     * @param string $filiereEconomique1
      * @return Fiche
      */
-    public function setInnovationsSocioeco($innovationsSocioeco)
+    public function setFiliereEconomique1($filiereEconomique1)
     {
-        $this->innovationsSocioeco = $innovationsSocioeco;
+        $this->filiereEconomique1 = $filiereEconomique1;
     
         return $this;
     }
 
     /**
-     * Get innovationsSocioeco
+     * Get filiereEconomique1
      *
      * @return string 
      */
-    public function getInnovationsSocioeco()
+    public function getFiliereEconomique1()
     {
-        return $this->innovationsSocioeco;
+        return $this->filiereEconomique1;
     }
 
     /**
-     * Set rolesEss
+     * Set sousfilieresClassiques1
      *
-     * @param string $rolesEss
+     * @param string $sousfilieresClassiques1
      * @return Fiche
      */
-    public function setRolesEss($rolesEss)
+    public function setSousfilieresClassiques1($sousfilieresClassiques1)
     {
-        $this->rolesEss = $rolesEss;
+        $this->sousfilieresClassiques1 = $sousfilieresClassiques1;
     
         return $this;
     }
 
     /**
-     * Get rolesEss
+     * Get sousfilieresClassiques1
      *
      * @return string 
      */
-    public function getRolesEss()
+    public function getSousfilieresClassiques1()
     {
-        return $this->rolesEss;
+        return $this->sousfilieresClassiques1;
+    }
+
+    /**
+     * Set sousfilieresEss1
+     *
+     * @param string $sousfilieresEss1
+     * @return Fiche
+     */
+    public function setSousfilieresEss1($sousfilieresEss1)
+    {
+        $this->sousfilieresEss1 = $sousfilieresEss1;
+    
+        return $this;
+    }
+
+    /**
+     * Get sousfilieresEss1
+     *
+     * @return string 
+     */
+    public function getSousfilieresEss1()
+    {
+        return $this->sousfilieresEss1;
+    }
+
+    /**
+     * Set filiereEconomique2
+     *
+     * @param string $filiereEconomique2
+     * @return Fiche
+     */
+    public function setFiliereEconomique2($filiereEconomique2)
+    {
+        $this->filiereEconomique2 = $filiereEconomique2;
+    
+        return $this;
+    }
+
+    /**
+     * Get filiereEconomique2
+     *
+     * @return string 
+     */
+    public function getFiliereEconomique2()
+    {
+        return $this->filiereEconomique2;
+    }
+
+    /**
+     * Set sousfilieresClassiques2
+     *
+     * @param string $sousfilieresClassiques2
+     * @return Fiche
+     */
+    public function setSousfilieresClassiques2($sousfilieresClassiques2)
+    {
+        $this->sousfilieresClassiques2 = $sousfilieresClassiques2;
+    
+        return $this;
+    }
+
+    /**
+     * Get sousfilieresClassiques2
+     *
+     * @return string 
+     */
+    public function getSousfilieresClassiques2()
+    {
+        return $this->sousfilieresClassiques2;
+    }
+
+    /**
+     * Set sousfilieresEss2
+     *
+     * @param string $sousfilieresEss2
+     * @return Fiche
+     */
+    public function setSousfilieresEss2($sousfilieresEss2)
+    {
+        $this->sousfilieresEss2 = $sousfilieresEss2;
+    
+        return $this;
+    }
+
+    /**
+     * Get sousfilieresEss2
+     *
+     * @return string 
+     */
+    public function getSousfilieresEss2()
+    {
+        return $this->sousfilieresEss2;
+    }
+
+    /**
+     * Set filiereEconomique3
+     *
+     * @param string $filiereEconomique3
+     * @return Fiche
+     */
+    public function setFiliereEconomique3($filiereEconomique3)
+    {
+        $this->filiereEconomique3 = $filiereEconomique3;
+    
+        return $this;
+    }
+
+    /**
+     * Get filiereEconomique3
+     *
+     * @return string 
+     */
+    public function getFiliereEconomique3()
+    {
+        return $this->filiereEconomique3;
+    }
+
+    /**
+     * Set sousfilieresClassiques3
+     *
+     * @param string $sousfilieresClassiques3
+     * @return Fiche
+     */
+    public function setSousfilieresClassiques3($sousfilieresClassiques3)
+    {
+        $this->sousfilieresClassiques3 = $sousfilieresClassiques3;
+    
+        return $this;
+    }
+
+    /**
+     * Get sousfilieresClassiques3
+     *
+     * @return string 
+     */
+    public function getSousfilieresClassiques3()
+    {
+        return $this->sousfilieresClassiques3;
+    }
+
+    /**
+     * Set sousfilieresEss3
+     *
+     * @param string $sousfilieresEss3
+     * @return Fiche
+     */
+    public function setSousfilieresEss3($sousfilieresEss3)
+    {
+        $this->sousfilieresEss3 = $sousfilieresEss3;
+    
+        return $this;
+    }
+
+    /**
+     * Get sousfilieresEss3
+     *
+     * @return string 
+     */
+    public function getSousfilieresEss3()
+    {
+        return $this->sousfilieresEss3;
     }
 
     /**
@@ -1455,72 +1619,118 @@ class Fiche
     }
 
     /**
-     * Set instances
+     * Set anneereFerence
      *
-     * @param string $instances
+     * @param integer $anneereFerence
      * @return Fiche
      */
-    public function setInstances($instances)
+    public function setAnneereFerence($anneereFerence)
     {
-        $this->instances = $instances;
+        $this->anneereFerence = $anneereFerence;
     
         return $this;
     }
 
     /**
-     * Get instances
+     * Get anneereFerence
      *
-     * @return string 
+     * @return integer 
      */
-    public function getInstances()
+    public function getAnneereFerence()
     {
-        return $this->instances;
+        return $this->anneereFerence;
     }
 
     /**
-     * Set compositionDirection
+     * Set proprieteBudget
      *
-     * @param string $compositionDirection
+     * @param string $proprieteBudget
      * @return Fiche
      */
-    public function setCompositionDirection($compositionDirection)
+    public function setProprieteBudget($proprieteBudget)
     {
-        $this->compositionDirection = $compositionDirection;
+        $this->proprieteBudget = $proprieteBudget;
     
         return $this;
     }
 
     /**
-     * Get compositionDirection
+     * Get proprieteBudget
      *
      * @return string 
      */
-    public function getCompositionDirection()
+    public function getProprieteBudget()
     {
-        return $this->compositionDirection;
+        return $this->proprieteBudget;
     }
 
     /**
-     * Set evalutationPartenaire
+     * Set proprieteChiffreaffaires
      *
-     * @param string $evalutationPartenaire
+     * @param string $proprieteChiffreaffaires
      * @return Fiche
      */
-    public function setEvalutationPartenaire($evalutationPartenaire)
+    public function setProprieteChiffreaffaires($proprieteChiffreaffaires)
     {
-        $this->evalutationPartenaire = $evalutationPartenaire;
+        $this->proprieteChiffreaffaires = $proprieteChiffreaffaires;
     
         return $this;
     }
 
     /**
-     * Get evalutationPartenaire
+     * Get proprieteChiffreaffaires
      *
      * @return string 
      */
-    public function getEvalutationPartenaire()
+    public function getProprieteChiffreaffaires()
     {
-        return $this->evalutationPartenaire;
+        return $this->proprieteChiffreaffaires;
+    }
+
+    /**
+     * Set proprieteValorisationbenevolat
+     *
+     * @param string $proprieteValorisationbenevolat
+     * @return Fiche
+     */
+    public function setProprieteValorisationbenevolat($proprieteValorisationbenevolat)
+    {
+        $this->proprieteValorisationbenevolat = $proprieteValorisationbenevolat;
+    
+        return $this;
+    }
+
+    /**
+     * Get proprieteValorisationbenevolat
+     *
+     * @return string 
+     */
+    public function getProprieteValorisationbenevolat()
+    {
+        return $this->proprieteValorisationbenevolat;
+    }
+
+    /**
+     * Set prestationsPrecises
+     *
+     * @param string $prestationsPrecises
+     * @return Fiche
+     */
+    public function setPrestationsPrecises($prestationsPrecises)
+    {
+        $this->prestationsPrecises = $prestationsPrecises;
+    
+        return $this;
+    }
+
+    /**
+     * Get prestationsPrecises
+     *
+     * @return string 
+     */
+    public function getPrestationsPrecises()
+    {
+        return $this->prestationsPrecises;
     }
 
     /**

@@ -41,3 +41,11 @@ carto_fiche_tag_edit:
 carto_fiche_homepage:
     path:     /hello
     defaults: { _controller: CartoFicheBundle:Fiche:index }
+
+carto_fiche_search:
+    path:     /search
+    defaults: { _controller: CartoFicheBundle:Fiche:search }
+
+carto_fiche_test:
+    path:     /test
+    defaults: { _controller: CartoFicheBundle:Fiche:test }
