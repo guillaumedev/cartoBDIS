@@ -441,7 +441,7 @@ class Fiche
     public $published=false;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Carto\FicheBundle\Entity\Categorie", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Carto\FicheBundle\Entity\Categorie")
      * @ORM\JoinColumn(name="categorie_id", referencedColumnName="id")
      */
     protected $categorie;
@@ -1835,45 +1835,5 @@ class Fiche
     public function getPublished()
     {
         return $this->published;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->categorie = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add categorie
-     *
-     * @param \Carto\FicheBundle\Entity\Categorie $categorie
-     * @return Fiche
-     */
-    public function addCategorie(\Carto\FicheBundle\Entity\Categorie $categorie)
-    {
-        $this->categorie[] = $categorie;
-
-        return $this;
-    }
-
-    /**
-     * Remove categorie
-     *
-     * @param \Carto\FicheBundle\Entity\Categorie $categorie
-     */
-    public function removeCategorie(\Carto\FicheBundle\Entity\Categorie $categorie)
-    {
-        $this->categorie->removeElement($categorie);
-    }
-
-    /**
-     * Get categorie
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getCategorie()
-    {
-        return $this->categorie;
     }
 }

@@ -7,7 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class FicheType extends AbstractType
+class FicheEditType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -134,7 +134,7 @@ class FicheType extends AbstractType
                     'SAL' => 'Salle de spectacle',
                     'ETR' => 'Etranger',
                     'LIB' => 'Librairie'
-                    )))
+                )))
 //            ->add('lieuVenteServices', 'choice', array(
 //                'label' => 'Lieux de vente des services',
 //                'expanded' => 'true',
@@ -253,7 +253,7 @@ class FicheType extends AbstractType
             ))
         ;
     }
-    
+
     /**
      * @param OptionsResolverInterface $resolver
      */

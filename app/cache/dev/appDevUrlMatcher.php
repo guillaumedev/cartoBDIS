@@ -395,6 +395,16 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Carto\\FicheBundle\\Controller\\FicheController::indexAction',  '_route' => 'carto_fiche_homepage',);
         }
 
+        // carto_fiche_search
+        if ($pathinfo === '/search') {
+            return array (  '_controller' => 'Carto\\FicheBundle\\Controller\\FicheController::searchAction',  '_route' => 'carto_fiche_search',);
+        }
+
+        // carto_fiche_test
+        if ($pathinfo === '/test') {
+            return array (  '_controller' => 'Carto\\FicheBundle\\Controller\\FicheController::testAction',  '_route' => 'carto_fiche_test',);
+        }
+
         if (0 === strpos($pathinfo, '/fiche')) {
             // carto_fiche_fiche_new
             if ($pathinfo === '/fiche/new') {
@@ -404,6 +414,16 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             // carto_fiche_fiche_create
             if ($pathinfo === '/fiche/create') {
                 return array (  '_controller' => 'Carto\\FicheBundle\\Controller\\FicheController::createAction',  '_route' => 'carto_fiche_fiche_create',);
+            }
+
+            // carto_fiche_fiche_edit
+            if (0 === strpos($pathinfo, '/fiche/edit') && preg_match('#^/fiche/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'carto_fiche_fiche_edit')), array (  '_controller' => 'Carto\\FicheBundle\\Controller\\FicheController::editAction',));
+            }
+
+            // carto_fiche_fiche_update
+            if (0 === strpos($pathinfo, '/fiche/update') && preg_match('#^/fiche/update/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'carto_fiche_fiche_update')), array (  '_controller' => 'Carto\\FicheBundle\\Controller\\FicheController::updateAction',));
             }
 
         }

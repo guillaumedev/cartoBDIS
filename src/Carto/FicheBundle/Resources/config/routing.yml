@@ -75,3 +75,13 @@ carto_fiche_fiche_create:
     defaults:
         _controller: CartoFicheBundle:Fiche:create
 
+carto_fiche_fiche_edit:
+    pattern: /fiche/edit/{id}
+    defaults:
+        _controller: CartoFicheBundle:Fiche:edit
+
+carto_fiche_fiche_update:
+    pattern: /fiche/update/{id}
+    defaults:
+        _controller: CartoFicheBundle:Fiche:update
+

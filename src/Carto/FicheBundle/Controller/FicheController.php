@@ -10,6 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Carto\FicheBundle\Entity\Fiche;
 use Carto\FicheBundle\Form\FicheType;
+use Carto\FicheBundle\Form\FicheEditType;
 
 class FicheController extends Controller
 {
@@ -100,9 +101,9 @@ class FicheController extends Controller
 	}
 	
 
-		print_r(json_encode($res, JSON_UNESCAPED_UNICODE));
+//		print_r(json_encode($res, JSON_UNESCAPED_UNICODE));
 		  
-    }
+//    }
 
     /**
      * Creates a new Fiche entity.
@@ -114,6 +115,15 @@ class FicheController extends Controller
         $entity = new Fiche();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
+
+        $lieuVenteProduit=implode(",", $form->getData()->getLieuVenteProduit());
+        $entity->setLieuVenteProduit($lieuVenteProduit);
+
+        $qualificatfsStructure=implode(",", $form->getData()->getQualificatifsStructure());
+        $entity->setQualificatifsStructure($qualificatfsStructure);
+
+        $organismesUsageers=implode(",", $form->getData()->getOrganismesUsagers());
+        $entity->setOrganismesUsagers($organismesUsageers);
 
         if ($form->isValid()) {
 
@@ -164,6 +174,94 @@ class FicheController extends Controller
         return array(
             'entity' => $entity,
             'form'   => $form->createView(),
+        );
+    }
+
+    /**
+     * Displays a form to edit an existing Fiche entity.
+     *
+     * @Method("GET")
+     * @Template()
+     */
+    public function editAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $fiche = $em->getRepository('CartoFicheBundle:Fiche')->find($id);
+
+        $fiche->setLieuVenteProduit(explode(',',$fiche->getLieuVenteProduit()));
+        $fiche->setQualificatifsStructure(explode(',',$fiche->getQualificatifsStructure()));
+        $fiche->setOrganismesUsagers(explode(',',$fiche->getOrganismesUsagers()));
+        if (!$fiche) {
+            throw $this->createNotFoundException('Unable to find Fiche entity.');
+        }
+
+        $editForm = $this->createEditForm($fiche);
+
+        return array(
+            'fiche'      => $fiche,
+            'form'   => $editForm->createView(),
+        );
+    }
+
+    /**
+     * Creates a form to edit a Fiche entity.
+     *
+     * @param Fiche $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createEditForm(Fiche $entity)
+    {
+        $form = $this->createForm(new FicheEditType(), $entity, array(
+            'action' => $this->generateUrl('carto_fiche_fiche_update', array('id' => $entity->getId())),
+            'method' => 'PUT',
+        ));
+
+        $form->add('submit', 'submit', array('label' => 'Update'));
+
+        $entity->getLieuVenteProduit();
+        return $form;
+    }
+    /**
+     * Edits an existing Fiche entity.
+     *
+     */
+    public function updateAction(Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('CartoFicheBundle:Fiche')->find($id);
+
+        $entity->setLieuVenteProduit(explode(',',$entity->getLieuVenteProduit()));
+        $entity->setQualificatifsStructure(explode(',',$entity->getQualificatifsStructure()));
+        $entity->setOrganismesUsagers(explode(',',$entity->getOrganismesUsagers()));
+
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Fiche entity.');
+        }
+
+        $editForm = $this->createEditForm($entity);
+        $editForm->handleRequest($request);
+
+        $lieuVenteProduit=implode(",", $editForm->getData()->getLieuVenteProduit());
+        $entity->setLieuVenteProduit($lieuVenteProduit);
+
+        $qualificatfsStructure=implode(",", $editForm->getData()->getQualificatifsStructure());
+        $entity->setQualificatifsStructure($qualificatfsStructure);
+
+        $organismesUsageers=implode(",", $editForm->getData()->getOrganismesUsagers());
+        $entity->setOrganismesUsagers($organismesUsageers);
+
+        if ($editForm->isValid()) {
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('carto_fiche_dashboard_dashboard'));
+        }
+        return array(
+            'entity'      => $entity,
+            'edit_form'   => $editForm->createView(),
         );
     }
 

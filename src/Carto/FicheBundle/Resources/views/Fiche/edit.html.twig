@@ -14,7 +14,8 @@
                 <li class="">Validation</li>
             </ul>
         </nav>
-        {{ form_start(form, {"attr": {"class": "formulaire"}}, {"action": path('carto_fiche_categorie_create')} ) }}
+        {{ form_start(form, {"attr": {"class": "formulaire"}}, {"action": path('carto_fiche_fiche_create')} ) }}
+
             <div id="part1">0
                 <h3>A.1. Identité</h3>
                 <div>
@@ -152,12 +153,12 @@
                     {{ form_widget(form.implicationUsagers) }}
                 </div>
                 {#<div>#}
-                    {#{{ form_label(form.lieuVenteProduits) }}#}
-                    {#{{ form_widget(form.lieuVenteProduits) }}#}
+                {#{{ form_label(form.lieuVenteProduits) }}#}
+                {#{{ form_widget(form.lieuVenteProduits) }}#}
                 {#</div>#}
                 {#<div>#}
-                    {#{{ form_label(form.lieuVenteServices) }}#}
-                    {#{{ form_widget(form.lieuVenteServices) }}#}
+                {#{{ form_label(form.lieuVenteServices) }}#}
+                {#{{ form_widget(form.lieuVenteServices) }}#}
                 {#</div>#}
                 <h3>B.2. Partenariats</h3>
                 <div>
@@ -167,19 +168,19 @@
                 <div>
                     {{ form_label(form.partenairesFinanciers) }}
                     {{ form_widget(form.partenairesFinanciers) }}
-                </div>              
+                </div>
                 <div>
                     {{ form_label(form.autresPartenaires) }}
                     {{ form_widget(form.autresPartenaires) }}
                 </div>
                 <h3>B.3. Nomenclature</h3>
                 {#<div>#}
-                    {#{{ form_label(form.innovationsSocioeco) }}#}
-                    {#{{ form_widget(form.innovationsSocioeco) }}#}
+                {#{{ form_label(form.innovationsSocioeco) }}#}
+                {#{{ form_widget(form.innovationsSocioeco) }}#}
                 {#</div>#}
                 {#<div>#}
-                    {#{{ form_label(form.rolesEss) }}#}
-                    {#{{ form_widget(form.rolesEss) }}#}
+                {#{{ form_label(form.rolesEss) }}#}
+                {#{{ form_widget(form.rolesEss) }}#}
                 {#</div>#}
                 <div>
                     {{ form_label(form.qualificatifsStructure) }}
@@ -188,40 +189,40 @@
                 <button class="btn boxShadow1">Continuer</button>
             </div>
             <div id="part3" class="hidden">
-            <h3>C.1. Mode de gouvernance</h3>
+                <h3>C.1. Mode de gouvernance</h3>
                 {#<div>#}
-                    {#{{ form_label(form.instances) }}#}
-                    {#{{ form_widget(form.instances) }}#}
+                {#{{ form_label(form.instances) }}#}
+                {#{{ form_widget(form.instances) }}#}
                 {#</div>#}
                 {#<div>#}
-                    {#{{ form_label(form.compositionDirection) }}#}
-                    {#{{ form_widget(form.compositionDirection) }}#}
+                {#{{ form_label(form.compositionDirection) }}#}
+                {#{{ form_widget(form.compositionDirection) }}#}
                 {#</div>#}
                 {#<div>#}
-                    {#{{ form_label(form.evalutationPartenaire) }}#}
-                    {#{{ form_widget(form.evalutationPartenaire) }}#}
-                {#</div>#}
-                <h3>C.2. Informations financière</h3>
-                {#<div>#}
-                    {#{{ form_label(form.innovationsSocioeco) }}#}
-                    {#{{ form_widget(form.innovationsSocioeco) }}#}
+                {#{{ form_label(form.evalutationPartenaire) }}#}
+                {#{{ form_widget(form.evalutationPartenaire) }}#}
                 {#</div>#}
                 <h3>C.2. Informations financière</h3>
                 {#<div>#}
-                    {#{{ form_label(form.innovationsSocioeco) }}#}
-                    {#{{ form_widget(form.innovationsSocioeco) }}#}
+                {#{{ form_label(form.innovationsSocioeco) }}#}
+                {#{{ form_widget(form.innovationsSocioeco) }}#}
+                {#</div>#}
+                <h3>C.2. Informations financière</h3>
+                {#<div>#}
+                {#{{ form_label(form.innovationsSocioeco) }}#}
+                {#{{ form_widget(form.innovationsSocioeco) }}#}
                 {#</div>#}
                 {#<div>#}
-                    {#{{ form_label(form.innovationsSocioeco) }}#}
-                    {#{{ form_widget(form.innovationsSocioeco) }}#}
+                {#{{ form_label(form.innovationsSocioeco) }}#}
+                {#{{ form_widget(form.innovationsSocioeco) }}#}
                 {#</div>#}
                 {#<div>#}
-                    {#{{ form_label(form.innovationsSocioeco) }}#}
-                    {#{{ form_widget(form.innovationsSocioeco) }}#}
+                {#{{ form_label(form.innovationsSocioeco) }}#}
+                {#{{ form_widget(form.innovationsSocioeco) }}#}
                 {#</div>#}
                 {#<div>#}
-                    {#{{ form_label(form.innovationsSocioeco) }}#}
-                    {#{{ form_widget(form.innovationsSocioeco) }}#}
+                {#{{ form_label(form.innovationsSocioeco) }}#}
+                {#{{ form_widget(form.innovationsSocioeco) }}#}
                 {#</div>#}
                 <h3>C.3. N° Siret et Code NAF</h3>
                 <div>
@@ -229,15 +230,15 @@
                     {{ form_widget(form.siret) }}
                 </div>
                 {#<div>#}
-                    {#{{ form_label(form.naf) }}#}
-                    {#{{ form_widget(form.naf) }}#}
+                {#{{ form_label(form.naf) }}#}
+                {#{{ form_widget(form.naf) }}#}
                 {#</div>#}
                 <h3>C.4. Mutualisation et échanges de compétences et ressources</h3>
                 {#<div>#}
-                    {#{{ form_label(form.naf) }}#}
-                    {#{{ form_widget(form.naf) }}#}
+                {#{{ form_label(form.naf) }}#}
+                {#{{ form_widget(form.naf) }}#}
                 {#</div>#}
-        </div>
+            </div>
         {{ form_end(form) }}
     </section>
 {% endblock %}
