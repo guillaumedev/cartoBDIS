@@ -406,11 +406,11 @@ footer a {
     margin-bottom: 20px;
 }
 
-#wrap .formulaire input[type="text"], textarea {
+#wrap .formulaire input[type="text"],#wrap .formulaire input[type="password"] , textarea {
 
     width:100%;
     background:#fff;
-    margin-bottom:4%;
+    /*margin-bottom:4%;*/
     border:1px solid #ccc;
     padding:10px;
     font-family:'Open Sans',sans-serif;
