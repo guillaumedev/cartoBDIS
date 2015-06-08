@@ -69,6 +69,14 @@ a {
     color: inherit;
 }
 
+#erreurfiche {
+    color: #2196F3;
+}
+
+#erreurfiche:hover {
+    text-decoration: underline;
+}
+
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
@@ -434,7 +442,16 @@ footer a {
 }
 #wrap label {
 
-    display: block;
+    /*display: block;*/
+}
+
+input[type="checkbox"]  {
+    float: right;
+}
+
+label {
+    float: left;
+    clear: left;
 }
 
 #wrap .btn {

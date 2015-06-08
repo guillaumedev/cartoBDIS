@@ -13,10 +13,14 @@
                 <div></div>
             </div>
         </div>
-        <div class="head-button">
-            <a href="{{ path('carto_fiche_fiche_new') }}" class="btn boxShadow1">Suggérer une initiative</a>
-            <a href="{{ path('fos_user_security_logout') }}" class="btn boxShadow1">Se déconnecter</a>
-        </div>
+        {%if is_granted("ROLE_USER")%}
+            {#{%if owner_fiche_exist==false%}#}
+                <div class="head-button">
+                    <a href="{{ path('carto_fiche_fiche_new') }}" class="btn boxShadow1">Suggérer une initiative</a>
+                    <a href="{{ path('fos_user_security_logout') }}" class="btn boxShadow1">Se déconnecter</a>
+                 </div>
+            {#{%endif%}#}
+        {%endif%}
     </header>
 {% endblock %}
 

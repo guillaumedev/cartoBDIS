@@ -2,6 +2,7 @@
 
 namespace Carto\FicheBundle\Controller;
 
+use Symfony\Component\Finder\Exception\AccessDeniedException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -112,32 +113,35 @@ class FicheController extends Controller
      */
     public function createAction(Request $request)
     {
-        $entity = new Fiche();
-        $form = $this->createCreateForm($entity);
-        $form->handleRequest($request);
 
-        $lieuVenteProduit=implode(",", $form->getData()->getLieuVenteProduit());
-        $entity->setLieuVenteProduit($lieuVenteProduit);
 
-        $qualificatfsStructure=implode(",", $form->getData()->getQualificatifsStructure());
-        $entity->setQualificatifsStructure($qualificatfsStructure);
+            $form = $this->createCreateForm($entity);
+            $form->handleRequest($request);
 
-        $organismesUsageers=implode(",", $form->getData()->getOrganismesUsagers());
-        $entity->setOrganismesUsagers($organismesUsageers);
+            $entity->setUser($this->getUser());
+            $lieuVenteProduit = implode(",", $form->getData()->getLieuVenteProduit());
+            $entity->setLieuVenteProduit($lieuVenteProduit);
 
-        if ($form->isValid()) {
+            $qualificatfsStructure = implode(",", $form->getData()->getQualificatifsStructure());
+            $entity->setQualificatifsStructure($qualificatfsStructure);
 
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($entity);
-            $em->flush();
+            $organismesUsageers = implode(",", $form->getData()->getOrganismesUsagers());
+            $entity->setOrganismesUsagers($organismesUsageers);
 
-            return $this->redirect($this->generateUrl('carto_fiche_dashboard_dashboard'));
-        }
+            if ($form->isValid()) {
 
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($entity);
+                $em->flush();
+
+                return $this->redirect($this->generateUrl('carto_fiche_dashboard_dashboard'));
+            }
+
+            return array(
+                'entity' => $entity,
+                'form' => $form->createView(),
+            );
+
     }
 
 
@@ -150,6 +154,7 @@ class FicheController extends Controller
      */
     private function createCreateForm(Fiche $entity)
     {
+
         $form = $this->createForm(new FicheType(), $entity, array(
             'action' => $this->generateUrl('carto_fiche_fiche_create'),
             'method' => 'POST',
@@ -158,6 +163,7 @@ class FicheController extends Controller
         $form->add('submit', 'submit', array('label' => 'Create'));
 
         return $form;
+
     }
 
     /**
@@ -168,13 +174,24 @@ class FicheController extends Controller
      */
     public function newAction()
     {
-        $entity = new Fiche();
-        $form   = $this->createCreateForm($entity);
+        if ($this->get('security.context')->isGranted('ROLE_USER')) {
 
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
+            if ($this->getUser()->getFiche() == null) {
+                $owner_fiche_exist = false;
+                echo "OK";
+                $entity = new Fiche();
+                $form   = $this->createCreateForm($entity);
+                return array(
+                    'entity' => $entity,
+                    'form'   => $form->createView(),
+                );
+            } else {
+                return $this->render("CartoFicheBundle:Fiche:erreur.html.twig", array("id" => $this->getUser()->getFiche()->getId()));
+            }
+
+        } else {
+            throw new AccessDeniedException("Vous n'avez pas les droits pour effectuer cette action");
+        }
     }
 
     /**

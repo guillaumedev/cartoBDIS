@@ -31,37 +31,4 @@ class User extends BaseUser
         parent::__construct();
         // your own logic
     }
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set fiche
-     *
-     * @param \Carto\FicheBundle\Entity\Fiche $fiche
-     * @return User
-     */
-    public function setFiche(\Carto\FicheBundle\Entity\Fiche $fiche = null)
-    {
-        $this->fiche = $fiche;
-
-        return $this;
-    }
-
-    /**
-     * Get fiche
-     *
-     * @return \Carto\FicheBundle\Entity\Fiche 
-     */
-    public function getFiche()
-    {
-        return $this->fiche;
-    }
 }

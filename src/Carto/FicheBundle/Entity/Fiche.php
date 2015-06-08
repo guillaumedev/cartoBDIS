@@ -446,6 +446,12 @@ class Fiche
      */
     protected $categorie;
 
+//    /**
+//     * @ORM\OneToOne(targetEntity="Carto\UserBundle\Entity\User")
+//     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+//     */
+//    protected $user;
+
 
     /**
      * Get id
@@ -1876,4 +1882,27 @@ class Fiche
     {
         return $this->categorie;
     }
+
+//    /**
+//     * Set user
+//     *
+//     * @param \Carto\UserBundle\Entity\User $user
+//     * @return Fiche
+//     */
+//    public function setUser(\Carto\UserBundle\Entity\User $user = null)
+//    {
+//        $this->user = $user;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get user
+//     *
+//     * @return \Carto\UserBundle\Entity\User
+//     */
+//    public function getUser()
+//    {
+//        return $this->user;
+//    }
 }

@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29458cdb-9065-4b87-8f83-acbbe363ebf4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Carto/FicheBundle/Form/FicheEditType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/Fiche/edit.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/Fiche/erreur.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Carto/FicheBundle/Entity/Fiche.php" afterPath="$PROJECT_DIR$/src/Carto/FicheBundle/Entity/Fiche.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Carto/FicheBundle/Controller/FicheController.php" afterPath="$PROJECT_DIR$/src/Carto/FicheBundle/Controller/FicheController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Carto/FicheBundle/Form/FicheType.php" afterPath="$PROJECT_DIR$/src/Carto/FicheBundle/Form/FicheType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/Fiche/new.html.twig" afterPath="$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/Fiche/new.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Carto/FicheBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/Carto/FicheBundle/Resources/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Carto/UserBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/Carto/UserBundle/Entity/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/layout.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/css/main.css" afterPath="$PROJECT_DIR$/web/assets/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="projetcarto.iws" />
@@ -36,23 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FicheController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Controller/FicheController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-33.5" vertical-offset="3005" max-vertical-offset="4658">
-              <caret line="228" column="7" selection-start-line="228" selection-start-column="7" selection-end-line="228" selection-end-column="7" />
-              <folding>
-                <element signature="e#48#93#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="FicheRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Entity/FicheRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9230769" vertical-offset="102" max-vertical-offset="680">
-              <caret line="12" column="46" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="46" />
+            <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="680">
+              <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
               <folding>
                 <marker date="1433754059821" expanded="true" signature="330:394" placeholder="SELECT a FRO..CartoFicheBundle..." />
                 <marker date="1433754059821" expanded="true" signature="538:598" placeholder="SELECT a FRO..CartoFicheBundle..." />
@@ -62,41 +47,65 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="FicheController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Controller/FicheController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.0" vertical-offset="2858" max-vertical-offset="4947">
+              <caret line="188" column="112" selection-start-line="188" selection-start-column="112" selection-end-line="188" selection-end-column="112" />
+              <folding>
+                <element signature="e#48#109#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/Fiche/new.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-158.23077" vertical-offset="0" max-vertical-offset="4233">
+              <caret line="242" column="0" selection-start-line="242" selection-start-column="0" selection-end-line="242" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="erreur.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/Fiche/erreur.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="221">
+              <caret line="5" column="131" selection-start-line="5" selection-start-column="131" selection-end-line="5" selection-end-column="131" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Resources/config/routing.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="979" max-vertical-offset="1581">
+              <caret line="77" column="22" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="FicheType.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Form/FicheType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.2363636" vertical-offset="0" max-vertical-offset="4760">
-              <caret line="4" column="30" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="-12.423077" vertical-offset="1530" max-vertical-offset="4760">
+              <caret line="109" column="31" selection-start-line="109" selection-start-column="31" selection-end-line="109" selection-end-column="31" />
+              <folding>
+                <element signature="e#42#76#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Fiche.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Entity/Fiche.php">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/assets/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47916666" vertical-offset="7323" max-vertical-offset="32045">
-              <caret line="447" column="0" selection-start-line="447" selection-start-column="0" selection-end-line="447" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CategorieType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Form/CategorieType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="731">
-              <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Categorie.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Entity/Categorie.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="19.23077" vertical-offset="1146" max-vertical-offset="1972">
-              <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.7417103" vertical-offset="867" max-vertical-offset="11322">
+              <caret line="76" column="30" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -105,39 +114,11 @@
       <file leaf-file-name="FicheEditType.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Form/FicheEditType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="151.76923" vertical-offset="4031" max-vertical-offset="4760">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/Categorie/edit.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="272">
-              <caret line="3" column="101" selection-start-line="3" selection-start-column="71" selection-end-line="3" selection-end-column="101" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/Fiche/edit.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.423077" vertical-offset="969" max-vertical-offset="4250">
-              <caret line="76" column="22" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/Fiche/new.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9230769" vertical-offset="1122" max-vertical-offset="4233">
-              <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
-              <folding />
+            <state vertical-scroll-proportion="-15.615385" vertical-offset="3776" max-vertical-offset="4760">
+              <caret line="246" column="36" selection-start-line="246" selection-start-column="36" selection-end-line="246" selection-end-column="36" />
+              <folding>
+                <element signature="e#42#76#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -146,10 +127,6 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="php app/console cache:clear --env=dev" />
-      <command text="php composer.phar install" />
-      <command text="php app/console cache:clear --env=dev" />
-      <command text="php composer.phar self-update" />
       <command text="php composer.phar update" />
       <command text="php app/console generate:bundle" />
       <command text="php app/console generate:doctrine:entitie" />
@@ -171,6 +148,10 @@
       <command text="php app/console generate:doctrine:entities CartoFicheBundle:Fiche" />
       <command text="php app/console generate:doctrine:entities CartoFicheBundle:Categorie" />
       <command text="php app/console doctrine:schema:update --force" />
+      <command text="php app/console generate:doctrine:entities CartoFicheBundle:Fiche" />
+      <command text="php app/console doctrine:schema:update --force" />
+      <command text="php app/console generate:doctrine:entities CartoUserBundle:User" />
+      <command text="php app/console doctrine:schema:update --force" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -188,7 +169,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/config/parameters.yml.dist" />
-        <option value="$PROJECT_DIR$/src/Carto/UserBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
@@ -215,24 +195,26 @@
         <option value="$PROJECT_DIR$/src/Carto/UserBundle/Resources/views/Registration/register.html.twig" />
         <option value="$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/Dashboard/charte.html.twig" />
         <option value="$PROJECT_DIR$/src/Carto/FicheBundle/Controller/DashboardController.php" />
-        <option value="$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/web/assets/js/main.js" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/Carto/UserBundle/Resources/views/layout.html.twig" />
-        <option value="$PROJECT_DIR$/web/assets/css/main.css" />
         <option value="$PROJECT_DIR$/src/Carto/UserBundle/Resources/views/Security/login.html.twig" />
         <option value="$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/Categorie/new.html.twig" />
         <option value="$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/Tag/tag-edit.html.twig" />
         <option value="$PROJECT_DIR$/src/Carto/FicheBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/Carto/FicheBundle/Form/DataTransformer/StringToArray.php" />
         <option value="$PROJECT_DIR$/src/Carto/FicheBundle/Form/DataTransformer/StringToArrayTransformer.php" />
-        <option value="$PROJECT_DIR$/src/Carto/FicheBundle/Controller/FicheController.php" />
+        <option value="$PROJECT_DIR$/src/Carto/FicheBundle/Form/FicheEditType.php" />
+        <option value="$PROJECT_DIR$/src/Carto/FicheBundle/Entity/Fiche.php" />
+        <option value="$PROJECT_DIR$/src/Carto/UserBundle/Entity/User.php" />
+        <option value="$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/Fiche/new.html.twig" />
         <option value="$PROJECT_DIR$/src/Carto/FicheBundle/Form/FicheType.php" />
-        <option value="$PROJECT_DIR$/src/Carto/FicheBundle/Form/FicheEditType.php" />
         <option value="$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/Fiche/edit.html.twig" />
-        <option value="$PROJECT_DIR$/src/Carto/FicheBundle/Entity/Fiche.php" />
+        <option value="$PROJECT_DIR$/src/Carto/FicheBundle/Controller/FicheController.php" />
+        <option value="$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/Fiche/erreur.html.twig" />
+        <option value="$PROJECT_DIR$/web/assets/css/main.css" />
       </list>
     </option>
   </component>
@@ -482,6 +464,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="projetcarto" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="projet-cartographie" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Carto" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UserBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -892,7 +900,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -908,7 +916,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21908316" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3189189" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3189189" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -941,13 +949,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.038462" vertical-offset="34" max-vertical-offset="782">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/services.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="898">
@@ -994,13 +995,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20401338" vertical-offset="21" max-vertical-offset="918">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/Categorie/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31228474" vertical-offset="0" max-vertical-offset="871">
-          <caret line="16" column="84" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="84" />
         </state>
       </provider>
     </entry>
@@ -1102,13 +1096,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Carto/UserBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37041286" vertical-offset="0" max-vertical-offset="872">
-          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/routing_dev.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3975501" vertical-offset="0" max-vertical-offset="898">
@@ -1141,26 +1128,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.346153" vertical-offset="0" max-vertical-offset="578">
-          <caret line="25" column="145" selection-start-line="25" selection-start-column="145" selection-end-line="25" selection-end-column="145" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Carto/UserBundle/Resources/views/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="871">
           <caret line="0" column="36" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6744705" vertical-offset="6416" max-vertical-offset="11033">
-          <caret line="413" column="21" selection-start-line="413" selection-start-column="21" selection-end-line="413" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -1221,36 +1192,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="582" max-vertical-offset="1581">
-          <caret line="80" column="43" selection-start-line="80" selection-start-column="43" selection-end-line="80" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/Categorie/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35416666" vertical-offset="0" max-vertical-offset="576">
           <caret line="12" column="18" selection-start-line="12" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Controller/FicheController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-33.5" vertical-offset="3005" max-vertical-offset="4658">
-          <caret line="228" column="7" selection-start-line="228" selection-start-column="7" selection-end-line="228" selection-end-column="7" />
-          <folding>
-            <element signature="e#48#93#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Form/CategorieType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="731">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -1263,14 +1208,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Form/FicheEditType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="151.76923" vertical-offset="4031" max-vertical-offset="4760">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/Categorie/edit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="272">
@@ -1279,34 +1216,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/Fiche/new.html.twig">
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/AccessDeniedException.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9230769" vertical-offset="1122" max-vertical-offset="4233">
-          <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
+        <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="408">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/Fiche/edit.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Carto/UserBundle/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.423077" vertical-offset="969" max-vertical-offset="4250">
-          <caret line="76" column="22" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="22" />
+        <state vertical-scroll-proportion="-16.346153" vertical-offset="561" max-vertical-offset="1224">
+          <caret line="59" column="6" selection-start-line="59" selection-start-column="6" selection-end-line="59" selection-end-column="6" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Form/CategorieType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="731">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6642984" vertical-offset="0" max-vertical-offset="646">
+          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Entity/Fiche.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.625" vertical-offset="7256" max-vertical-offset="32538">
+          <caret line="448" column="0" selection-start-line="448" selection-start-column="0" selection-end-line="452" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Form/FicheEditType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.615385" vertical-offset="3776" max-vertical-offset="4760">
+          <caret line="246" column="36" selection-start-line="246" selection-start-column="36" selection-end-line="246" selection-end-column="36" />
+          <folding>
+            <element signature="e#42#76#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Form/FicheType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2363636" vertical-offset="0" max-vertical-offset="4760">
-          <caret line="4" column="30" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state vertical-scroll-proportion="-12.423077" vertical-offset="1530" max-vertical-offset="4760">
+          <caret line="109" column="31" selection-start-line="109" selection-start-column="31" selection-end-line="109" selection-end-column="31" />
+          <folding>
+            <element signature="e#42#76#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/Fiche/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5017361" vertical-offset="986" max-vertical-offset="4250">
+          <caret line="75" column="28" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/Categorie/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4722222" vertical-offset="0" max-vertical-offset="576">
+          <caret line="16" column="84" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="979" max-vertical-offset="1581">
+          <caret line="77" column="22" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Entity/FicheRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9230769" vertical-offset="102" max-vertical-offset="680">
-          <caret line="12" column="46" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="46" />
+        <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="680">
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
           <folding>
             <marker date="1433754059821" expanded="true" signature="330:394" placeholder="SELECT a FRO..CartoFicheBundle..." />
             <marker date="1433754059821" expanded="true" signature="538:598" placeholder="SELECT a FRO..CartoFicheBundle..." />
@@ -1315,10 +1312,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Entity/Fiche.php">
+    <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/Fiche/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47916666" vertical-offset="7323" max-vertical-offset="32045">
-          <caret line="447" column="0" selection-start-line="447" selection-start-column="0" selection-end-line="447" selection-end-column="0" />
+        <state vertical-scroll-proportion="-158.23077" vertical-offset="0" max-vertical-offset="4233">
+          <caret line="242" column="0" selection-start-line="242" selection-start-column="0" selection-end-line="242" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Controller/FicheController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.0" vertical-offset="2858" max-vertical-offset="4947">
+          <caret line="188" column="112" selection-start-line="188" selection-start-column="112" selection-end-line="188" selection-end-column="112" />
+          <folding>
+            <element signature="e#48#109#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Carto/FicheBundle/Resources/views/Fiche/erreur.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="221">
+          <caret line="5" column="131" selection-start-line="5" selection-start-column="131" selection-end-line="5" selection-end-column="131" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/assets/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7417103" vertical-offset="867" max-vertical-offset="11322">
+          <caret line="76" column="30" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="30" />
           <folding />
         </state>
       </provider>

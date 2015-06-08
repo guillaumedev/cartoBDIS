@@ -1,0 +1,8 @@
+{% extends 'CartoFicheBundle::layout.html.twig' %}
+
+{% block content %}
+    <div id="wrap">
+        <p>Vous avez déjà une fiche! Vous ne pouvez pas en créer une nouvelle.</p>
+        <p>Vous pouvez éditer votre fiche existante : <a href="{{ path('carto_fiche_fiche_edit', { "id": id }) }}" id="erreurfiche">Editer votre fiche</a></p>
+    </div>
+{% endblock %}
