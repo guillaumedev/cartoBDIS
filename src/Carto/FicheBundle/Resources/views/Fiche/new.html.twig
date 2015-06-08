@@ -1,0 +1,239 @@
+{% extends 'CartoFicheBundle::layout.html.twig' %}
+
+{% block content %}
+    <section id="wrap" class="boxShadow1">
+        <div class="titre">
+            <h2>Ajouter une nouvelle fiche</h2>
+            <hr>
+        </div>
+        <nav>
+            <ul class='tabs' id="new-fiche">
+                <li class="on part1">Première partie</li>
+                <li class="part2">Deuxième partie</li>
+                <li class="part3">Troisième partie</li>
+                <li class="">Validation</li>
+            </ul>
+        </nav>
+        <form action="{{ path('carto_fiche_fiche_create') }}" class="formulaire">
+            <div id="part1">0
+                <h3>A.1. Identité</h3>
+                <div>
+                    {{ form_label(form.nom) }}
+                    {{ form_widget(form.nom) }}
+                </div>
+                <div>
+                    {{ form_label(form.sigle) }}
+                    {{ form_widget(form.sigle) }}
+                </div>
+                <div>
+                    {{ form_label(form.adresse) }}
+                    {{ form_widget(form.adresse) }}
+                </div>
+                <div>
+                    {{ form_label(form.codepostal) }}
+                    {{ form_widget(form.codepostal) }}
+                </div>
+                <div>
+                    {{ form_label(form.ville) }}
+                    {{ form_widget(form.ville) }}
+                </div>
+                <div>
+                    {{ form_label(form.departement) }}
+                    {{ form_widget(form.departement) }}
+                </div>
+                <div>
+                    {{ form_label(form.region) }}
+                    {{ form_widget(form.region) }}
+                </div>
+                <div>
+                    {{ form_label(form.joursOuverture) }}
+                    {{ form_widget(form.joursOuverture) }}
+                </div>
+                <div>
+                    {{ form_label(form.telephone) }}
+                    {{ form_widget(form.telephone) }}
+                </div>
+                <div>
+                    {{ form_label(form.fax) }}
+                    {{ form_widget(form.fax) }}
+                </div>
+                <div>
+                    {{ form_label(form.courriel) }}
+                    {{ form_widget(form.courriel) }}
+                </div>
+                <div>
+                    {{ form_label(form.site) }}
+                    {{ form_widget(form.site) }}
+                </div>
+                <div>
+                    {{ form_label(form.contacts) }}
+                    {{ form_widget(form.contacts) }}
+                </div>
+                <h3>A.2. Données juridiques et organisation</h3>
+                <div>
+                    {{ form_label(form.anneeCreation) }}
+                    {{ form_widget(form.anneeCreation) }}
+                </div>
+                <div>
+                    {{ form_label(form.situation) }}
+                    {{ form_widget(form.situation) }}
+                </div>
+                <div>
+                    {{ form_label(form.statutJuridique) }}
+                    {{ form_widget(form.statutJuridique) }}
+                </div>
+                <div>
+                    {{ form_label(form.structurePorteuse) }}
+                    {{ form_widget(form.structurePorteuse) }}
+                </div>
+                <div>
+                    {{ form_label(form.nombreSalaries) }}
+                    {{ form_widget(form.nombreSalaries) }}
+                </div>
+                <div>
+                    {{ form_label(form.nombreEtp) }}
+                    {{ form_widget(form.nombreEtp) }}
+                </div>
+                <div>
+                    {{ form_label(form.nombreAssocies) }}
+                    {{ form_widget(form.nombreAssocies) }}
+                </div>
+                <div>
+                    {{ form_label(form.nombreAdherents) }}
+                    {{ form_widget(form.nombreAdherents) }}
+                </div>
+                <div>
+                    {{ form_label(form.nombreBenevoles) }}
+                    {{ form_widget(form.nombreBenevoles) }}
+                </div>
+                <h3>A.3. Objectifs, activités, présentation de la structure</h3>
+                <div>
+                    {{ form_label(form.presentation) }}
+                    {{ form_widget(form.presentation) }}
+                </div>
+                <div>
+                    {{ form_label(form.objectifs) }}
+                    {{ form_widget(form.objectifs) }}
+                </div>
+                <div>
+                    {{ form_label(form.activites) }}
+                    {{ form_widget(form.activites) }}
+                </div>
+                <div>
+                    {{ form_label(form.charte) }}
+                    {{ form_widget(form.charte) }}
+                </div>
+                <div>
+                    {{ form_label(form.utiliteSociale) }}
+                    {{ form_widget(form.utiliteSociale) }}
+                </div>
+                <button class="btn boxShadow1">Continuer</button>
+            </div>
+            <div id="part2" class="hidden">
+                <div>
+                    <h3>B.1. Territoire d'intervention, lieux de distribution, usagers</h3>
+                    {{ form_label(form.territoire) }}
+                    {{ form_widget(form.territoire) }}
+                </div>
+                <div>
+                    {{ form_label(form.organismesUsagers) }}
+                    {{ form_widget(form.organismesUsagers) }}
+                </div>
+                <div>
+                    {{ form_label(form.detailsUsagers) }}
+                    {{ form_widget(form.detailsUsagers) }}
+                </div>
+                <div>
+                    {{ form_label(form.implicationUsagers) }}
+                    {{ form_widget(form.implicationUsagers) }}
+                </div>
+                <div>
+                    {{ form_label(form.lieuVenteProduits) }}
+                    {{ form_widget(form.lieuVenteProduits) }}
+                </div>
+                <div>
+                    {{ form_label(form.lieuVenteServices) }}
+                    {{ form_widget(form.lieuVenteServices) }}
+                </div>
+                <h3>B.2. Partenariats</h3>
+                <div>
+                    {{ form_label(form.reseaux) }}
+                    {{ form_widget(form.reseaux) }}
+                </div>
+                <div>
+                    {{ form_label(form.partenairesFinanciers) }}
+                    {{ form_widget(form.partenairesFinanciers) }}
+                </div>              
+                <div>
+                    {{ form_label(form.autresPartenaires) }}
+                    {{ form_widget(form.autresPartenaires) }}
+                </div>
+                <h3>B.3. Nomenclature</h3>
+                <div>
+                    {{ form_label(form.innovationsSocioeco) }}
+                    {{ form_widget(form.innovationsSocioeco) }}
+                </div>
+                <div>
+                    {{ form_label(form.rolesEss) }}
+                    {{ form_widget(form.rolesEss) }}
+                </div>
+                <div>
+                    {{ form_label(form.qualificatifsStructure) }}
+                    {{ form_widget(form.qualificatifsStructure) }}
+                </div>
+                <button class="btn boxShadow1">Continuer</button>
+            </div>
+            <div id="part3" class="hidden">
+            <h3>C.1. Mode de gouvernance</h3>
+                <div>
+                    {{ form_label(form.instances) }}
+                    {{ form_widget(form.instances) }}
+                </div>
+                <div>
+                    {{ form_label(form.compositionDirection) }}
+                    {{ form_widget(form.compositionDirection) }}
+                </div>
+                <div>
+                    {{ form_label(form.evalutationPartenaire) }}
+                    {{ form_widget(form.evalutationPartenaire) }}
+                </div>
+                <h3>C.2. Informations financière</h3>
+                <div>
+                    {{ form_label(form.innovationsSocioeco) }}
+                    {{ form_widget(form.innovationsSocioeco) }}
+                </div>
+                <h3>C.2. Informations financière</h3>
+                <div>
+                    {{ form_label(form.innovationsSocioeco) }}
+                    {{ form_widget(form.innovationsSocioeco) }}
+                </div>
+                <div>
+                    {{ form_label(form.innovationsSocioeco) }}
+                    {{ form_widget(form.innovationsSocioeco) }}
+                </div>
+                <div>
+                    {{ form_label(form.innovationsSocioeco) }}
+                    {{ form_widget(form.innovationsSocioeco) }}
+                </div>
+                <div>
+                    {{ form_label(form.innovationsSocioeco) }}
+                    {{ form_widget(form.innovationsSocioeco) }}
+                </div>
+                <h3>C.3. N° Siret et Code NAF</h3>
+                <div>
+                    {{ form_label(form.siret) }}
+                    {{ form_widget(form.siret) }}
+                </div>
+                <div>
+                    {{ form_label(form.naf) }}
+                    {{ form_widget(form.naf) }}
+                </div>
+                <h3>C.4. Mutualisation et échanges de compétences et ressources</h3>
+                <div>
+                    {{ form_label(form.naf) }}
+                    {{ form_widget(form.naf) }}
+                </div>
+        </div>
+    </form>
+    </section>
+{% endblock %}

@@ -45,4 +45,9 @@ class DashboardController extends Controller
             'category' => $category
         );
     }
+
+    public function charteAction()
+    {
+
+    }
 }

@@ -1,0 +1,31 @@
+{% extends 'CartoUserBundle::layout.html.twig' %}
+
+{% block content %}
+    <div id="wrap">
+        <div class="titre">
+            <h2>Connexion</h2>
+            <hr>
+        </div>
+    <form action="{{ path('fos_user_security_check') }}" method="post" class='form-validate formulaire'>
+        <div class="control-group">
+            <div class="email controls">
+                <label>Nom</label>
+                <input type="text" name="_username" value="{{ last_username }}" placeholder="{{ 'Login' }}" class='input-block-level' data-rule-required="true" data-rule-email="true">
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="pw controls">
+                <label>Mot de passe</label>
+                <input type="password" name="_password" placeholder="{{ 'Mot de passe' }}" class='input-block-level' data-rule-required="true" >
+            </div>
+        </div>
+        <div class="submit">
+            <div class="remember">
+                <input type="checkbox" name="_remember_me" class='icheck-me' data-skin="square" data-color="blue" id="remember" /> <label for="remember">{{ 'Se souvenir de moi' }}</label>
+            </div>
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+            <input type="submit" value="{{ 'Connexion' }}" class='btn btn-primary' />
+        </div>
+    </form>
+    </div>
+{% endblock %}

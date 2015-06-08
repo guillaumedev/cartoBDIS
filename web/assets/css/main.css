@@ -88,6 +88,7 @@ header {
     flex-direction:column;
     z-index: 20;
     padding: 0 1rem;
+    top: 0;
 }
 
 .title {
@@ -175,7 +176,7 @@ h1 {
     right: -100%;
     height: 100%;
     max-height: 100%;
-    padding: 160px 2rem 50px 1rem;
+    padding: 160px 2rem 50px 2rem;
     z-index: 2;
     -webkit-transition:right 0.5s;
     transition:right 0.5s;
@@ -193,12 +194,32 @@ h1 {
     font-weight: 300;
 }
 
-#aside input {
+#aside input[type="text"] {
 
-    width: 100%;
+    width: 90%;
+    margin-bottom: 5px;
+    float: left;
+    height: 34px;
 }
 
-#aside .tabs {
+#aside input[type="checkbox"] {
+
+    clear: left;
+}
+
+#aside button {
+
+    width: 9%;
+    height: 34px;
+}
+
+#aside button img {
+
+    width: 100%;
+    height: 100%;
+}
+
+.tabs {
 
     display: flex;
     list-style: none;
@@ -207,17 +228,18 @@ h1 {
     padding: 0;
     margin: 0;
 }
-#aside .tabs li {
+.tabs li {
 
     padding-bottom: 5px;
+    cursor: pointer;
 }
-#aside .tabs li.on {
+.tabs li.on {
 
     font-weight: bold;
     border-bottom: 2px solid rgba(0,0,0,0.3);
 }
 
-#aside .tabs li img {
+.tabs li img {
 
     width: 15px;
     height: 15px;
@@ -225,12 +247,73 @@ h1 {
     margin-right: 5px;
 }
 
-#results {
+#aside .contenu {
+
+    position: relative;
+    padding-bottom: 28px;
+    height: 100%;
+}
+.search {
+
+    overflow: hidden;
+}
+#aside .contenu>div {
 
     width: 100%;
-    overflow-y:scroll;
     margin-bottom: 20px;
+    max-height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
 }
+
+#results {
+
+    position: absolute;
+    bottom: 0;
+    top: 150px;
+    overflow-y:scroll; 
+    width: 100%;
+}
+
+/*
+#informations, #aide {
+
+    padding: 0 2rem;
+    overflow-y:scroll;
+}
+*/
+#aside .contenu>div.hide {
+
+    display: none;
+}
+
+/* ==========================================================================
+   modal
+   ========================================================================== */
+
+   div.modal {
+
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.6);
+        z-index: 800;
+   }
+
+   div.modal div {
+
+        position: fixed;
+        width: 70%;
+        margin: 15% 15%;
+        max-height: 70%;
+        background-color: white;
+        min-height: 400px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        z-index: 1000;
+        overflow-y: scroll;
+   }
+
 
 /* ==========================================================================
    map
@@ -312,13 +395,61 @@ footer a {
 
 #wrap {
 
-    padding: 64px 2rem 60px 2rem;
+    padding: 2rem;
     max-width: 1100px;
-    margin: 0 auto; 
+    margin: 80px auto; 
     background-color: #f2f2f2;
 
 }
+#wrap .formulaire>div>div {
 
+    margin-bottom: 20px;
+}
+
+#wrap .formulaire input[type="text"],#wrap .formulaire input[type="password"] , textarea {
+
+    width:100%;
+    background:#fff;
+    /*margin-bottom:4%;*/
+    border:1px solid #ccc;
+    padding:10px;
+    font-family:'Open Sans',sans-serif;
+    font-size:95%;
+    color:#555;
+
+}
+#wrap label {
+
+    font-size: 1.1rem;
+}
+
+#wrap .formulaire input[type="checkbox"] {
+
+
+}
+
+#wrap .formulaire textarea {
+
+    min-height: 150px; 
+}
+#wrap label {
+
+    display: block;
+}
+
+#wrap .btn {
+
+    height: 36px;
+    margin: 0;
+    border: none;
+    padding: 0 2rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: white;
+    background-color: #2196F3;
+    line-height: 36px;
+
+}
 /* ==========================================================================
    home page
    ========================================================================== */
@@ -454,6 +585,7 @@ footer a {
 
         display: inline-block;
     }
+
 }
 
 @media print,

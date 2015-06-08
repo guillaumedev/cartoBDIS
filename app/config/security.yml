@@ -36,9 +36,13 @@ security:
             form_login:
                 login_path: fos_user_security_login
                 check_path: fos_user_security_check
+                always_use_default_target_path: false
+                default_target_path: carto_fiche_dashboard_dashboard
+                target_path_parameter: _target_path
+                use_referer: false
             logout:
                 path:       fos_user_security_logout
-                target:     fos_user_security_login
+                target:     carto_fiche_homepage_index
             remember_me:
                 key:        %secret%
 
